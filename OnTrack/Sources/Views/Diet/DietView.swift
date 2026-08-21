@@ -1,0 +1,199 @@
+import SwiftUI
+import SwiftData
+
+struct DietView: View {
+    @Environment(\.modelContext) private var context
+    @Environment(\.scenePhase) private var scenePhase
+    @Query private var profiles: [UserProfile]
+    @Query(sort: \BodyWeightEntry.date, order: .reverse) private var weights: [BodyWeightEntry]
+    @Query(sort: \DiaryEntry.date) private var allEntries: [DiaryEntry]
+    @State private var day = Calendar.current.startOfDay(for: Date())
+    @State private var addingToMeal: String?
+    @State private var pendingDeletion: [DiaryEntry] = []
+
+    private let meals = ["breakfast", "lunch", "dinner", "snack"]
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    daySwitcher
+                        .listRowInsets(EdgeInsets())
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                }
+                totalsSection
+                ForEach(meals, id: \.self) { meal in
+                    mealSection(meal)
+                }
+            }
+            .navigationTitle("Diet")
+            // day is @State (set once at init); without this it stays pinned to the
+            // day the view was created and drifts from the live "today" the dashboard
+            // shows once the clock crosses midnight.
+            .onAppear { snapToToday() }
+            .onChange(of: scenePhase) { _, phase in if phase == .active { snapToToday() } }
+            .confirmationDialog(
+                "Delete this food?",
+                isPresented: Binding(get: { !pendingDeletion.isEmpty }, set: { if !$0 { pendingDeletion = [] } }),
+                titleVisibility: .visible
+            ) {
+                Button("Delete", role: .destructive) { deletePending() }
+                Button("Cancel", role: .cancel) { pendingDeletion = [] }
+            }
+            .sheet(item: Binding(
+                get: { addingToMeal.map { MealTarget(meal: $0) } },
+                set: { addingToMeal = $0?.meal })
+            ) { target in
+                FoodSearchView(meal: target.meal, day: day) {
+                    refreshCheckInNotification()
+                }
+            }
+        }
+    }
+
+    private struct MealTarget: Identifiable {
+        let meal: String
+        var id: String { meal }
+    }
+
+    private var dayEntries: [DiaryEntry] {
+        let cal = Calendar.current
+        return allEntries.filter { cal.isDate($0.date, inSameDayAs: day) }
+    }
+
+    private var dayLabel: String {
+        Calendar.current.isDateInToday(day) ? "Today" : day.formatted(date: .abbreviated, time: .omitted)
+    }
+
+    private var daySwitcher: some View {
+        HStack {
+            Button { shiftDay(-1) } label: {
+                Image(systemName: "chevron.left")
+                    .font(.headline)
+                    .frame(width: 44, height: 44)
+            }
+            Spacer()
+            Text(dayLabel)
+                .font(.title3.bold())
+            Spacer()
+            Button { shiftDay(1) } label: {
+                Image(systemName: "chevron.right")
+                    .font(.headline)
+                    .frame(width: 44, height: 44)
+            }
+            .disabled(Calendar.current.isDateInToday(day))
+            .opacity(Calendar.current.isDateInToday(day) ? 0.3 : 1)
+        }
+        .padding(.horizontal, 4)
+    }
+
+    private func shiftDay(_ delta: Int) {
+        day = Calendar.current.date(byAdding: .day, value: delta, to: day)!
+    }
+
+    private func snapToToday() {
+        let today = Calendar.current.startOfDay(for: Date())
+        if day != today { day = today }
+    }
+
+    private var totalsSection: some View {
+        let cals = dayEntries.reduce(0) { $0 + $1.calories }
+        let protein = dayEntries.reduce(0) { $0 + $1.protein }
+        let carbs = dayEntries.reduce(0) { $0 + $1.carbs }
+        let fat = dayEntries.reduce(0) { $0 + $1.fat }
+        let profile = profiles.first
+        let weightKg = weights.first?.weightKg ?? 70
+        let target = profile.map { Calculations.calorieTarget(profile: $0, weightKg: weightKg) }
+        let macros = profile.map { Calculations.macroTargets(profile: $0, weightKg: weightKg) }
+
+        return Section {
+            VStack(spacing: 10) {
+                HStack {
+                    Text("\(Int(cals))").font(.system(size: 34, weight: .bold))
+                    if let target {
+                        Text("/ \(Int(target)) kcal").foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    if let target {
+                        Text("\(Int(max(0, target - cals))) left")
+                            .font(.subheadline).bold()
+                            .foregroundStyle(cals > target ? .red : .green)
+                    }
+                }
+                if let target { ProgressView(value: min(cals / max(target, 1), 1)) }
+                HStack(spacing: 16) {
+                    macroLabel("P", protein, macros?.protein)
+                    macroLabel("C", carbs, macros?.carbs)
+                    macroLabel("F", fat, macros?.fat)
+                }
+                .font(.caption)
+            }
+            .padding(.vertical, 4)
+        }
+    }
+
+    private func macroLabel(_ name: String, _ value: Double, _ target: Double?) -> some View {
+        HStack(spacing: 3) {
+            Text(name).bold()
+            Text("\(Int(value))\(target.map { "/\(Int($0))" } ?? "")g")
+                .foregroundStyle(.secondary)
+        }
+    }
+
+    private func mealSection(_ meal: String) -> some View {
+        let entries = dayEntries.filter { $0.meal == meal }
+        return Section {
+            ForEach(entries) { entry in
+                HStack(spacing: 12) {
+                    FoodThumbnail(imageFilename: entry.food?.imageFilename, source: entry.food?.source, size: 40)
+                    VStack(alignment: .leading) {
+                        Text(entry.food?.name ?? "Unknown")
+                        Text("\(entry.numberOfServings, format: .number.precision(.fractionLength(0...1))) × \(entry.food?.servingSize ?? 0, format: .number.precision(.fractionLength(0...1)))\(entry.food?.servingUnit ?? "")")
+                            .font(.caption).foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    Text("\(Int(entry.calories)) kcal").foregroundStyle(.secondary)
+                }
+            }
+            .onDelete { indexSet in
+                pendingDeletion = indexSet.map { entries[$0] }
+            }
+            Button {
+                addingToMeal = meal
+            } label: {
+                Label("Add food", systemImage: "plus")
+                    .font(.subheadline)
+            }
+        } header: {
+            HStack {
+                Text(meal.capitalized)
+                Spacer()
+                if !entries.isEmpty {
+                    Text("\(Int(entries.reduce(0) { $0 + $1.calories })) kcal")
+                }
+            }
+        }
+    }
+
+    private func deletePending() {
+        for e in pendingDeletion {
+            // ponytail: photo FoodItems are created 1:1 per capture (never
+            // reused), so deleting the entry's image can't strand another row.
+            if let file = e.food?.imageFilename { ImageStore.delete(file) }
+            context.delete(e)
+        }
+        pendingDeletion = []
+        refreshCheckInNotification()
+    }
+
+    private func refreshCheckInNotification() {
+        guard let profile = profiles.first else { return }
+        let cal = Calendar.current
+        let todayCals = allEntries
+            .filter { cal.isDateInToday($0.date) }
+            .reduce(0) { $0 + $1.calories }
+        let target = Calculations.calorieTarget(profile: profile, weightKg: weights.first?.weightKg ?? 70)
+        NotificationService.shared.rescheduleDailyCheckIn(caloriesLogged: todayCals, target: target)
+    }
+}

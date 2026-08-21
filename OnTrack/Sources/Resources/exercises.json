@@ -1,0 +1,4930 @@
+[
+  {
+    "id": "Ab_Coaster",
+    "name": "Ab Coaster",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Ab_Crunch_Machine",
+    "name": "Ab Crunch Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Abductor_Machine",
+    "name": "Abductor Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Adductor_Machine",
+    "name": "Adductor Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Archer_Pull_Up",
+    "name": "Archer Pull Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Arnold_Press",
+    "name": "Arnold Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Assisted_Dip_Machine",
+    "name": "Assisted Dip Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Assisted_Pull_Up_Machine",
+    "name": "Assisted Pull Up Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Australian_Chin_Up",
+    "name": "Australian Chin Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Back_Bridge",
+    "name": "Back Bridge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Back_Extension",
+    "name": "Back Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Back_Extension_Machine",
+    "name": "Back Extension Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Back_Lever",
+    "name": "Back Lever",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Backward_Step_Down",
+    "name": "Backward Step Down",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Banded_Hamstring_Curl",
+    "name": "Banded Hamstring Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Bench_Press",
+    "name": "Barbell Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Bent_Over_Rear_Delt_Raise",
+    "name": "Barbell Bent Over Rear Delt Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Curl",
+    "name": "Barbell Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Deadlift",
+    "name": "Barbell Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Forearm_Curl_Behind_the_Back",
+    "name": "Barbell Forearm Curl Behind the Back",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Front_Raise",
+    "name": "Barbell Front Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Front_Squat",
+    "name": "Barbell Front Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Good_Morning",
+    "name": "Barbell Good Morning",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Hack_Squat",
+    "name": "Barbell Hack Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Hip_Thrust",
+    "name": "Barbell Hip Thrust",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Holds",
+    "name": "Barbell Holds",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Lunge",
+    "name": "Barbell Lunge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Lying_Triceps_Extension",
+    "name": "Barbell Lying Triceps Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Overhead_Press",
+    "name": "Barbell Overhead Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Pin_Press",
+    "name": "Barbell Pin Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Preacher_Curl",
+    "name": "Barbell Preacher Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Rear_Delt_Row",
+    "name": "Barbell Rear Delt Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Reverse_Curls",
+    "name": "Barbell Reverse Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Reverse_Lunge",
+    "name": "Barbell Reverse Lunge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Romanian_Deadlift_RDL",
+    "name": "Barbell Romanian Deadlift (RDL)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Row",
+    "name": "Barbell Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Row_Underhand",
+    "name": "Barbell Row (Underhand)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Shoulder_Press",
+    "name": "Barbell Shoulder Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Shrug",
+    "name": "Barbell Shrug",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Shrug_Behind_the_Back",
+    "name": "Barbell Shrug Behind the Back",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Side_Lunge",
+    "name": "Barbell Side Lunge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Skull_Crushers",
+    "name": "Barbell Skull Crushers",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Spider_Curls",
+    "name": "Barbell Spider Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Squat",
+    "name": "Barbell Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Standing_Triceps_Extension",
+    "name": "Barbell Standing Triceps Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Sumo_Deadlift",
+    "name": "Barbell Sumo Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Sumo_Squats",
+    "name": "Barbell Sumo Squats",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Upright_Row",
+    "name": "Barbell Upright Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Walking_Lunge",
+    "name": "Barbell Walking Lunge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Wrist_Curl",
+    "name": "Barbell Wrist Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Wrist_Curl_Behind_the_Back",
+    "name": "Barbell Wrist Curl Behind the Back",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Barbell_Z_Press",
+    "name": "Barbell Z Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Batwing_Row",
+    "name": "Batwing Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bayesian_Curls",
+    "name": "Bayesian Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bear_Crawl",
+    "name": "Bear Crawl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Belt_Squat",
+    "name": "Belt Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bench_Dip",
+    "name": "Bench Dip",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bent_Leg_Raise",
+    "name": "Bent Leg Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bent_Over_Barbell_Row",
+    "name": "Bent Over Barbell Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bent_Over_Calf_Raise_Machine",
+    "name": "Bent Over Calf Raise Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bent_Over_Dumbbell_Reverse_Fly",
+    "name": "Bent Over Dumbbell Reverse Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bent_Over_Dumbbell_Row",
+    "name": "Bent Over Dumbbell Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bicep_Curl_Machine",
+    "name": "Bicep Curl Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bicycle_Crunch",
+    "name": "Bicycle Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bird_Dog",
+    "name": "Bird Dog",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Block_Snatch",
+    "name": "Block Snatch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Body_Weight_Squat",
+    "name": "Body Weight Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bodyweight_Curl",
+    "name": "Bodyweight Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bodyweight_Skull_Crushers",
+    "name": "Bodyweight Skull Crushers",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Box_Jumps",
+    "name": "Box Jumps",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Box_Squat",
+    "name": "Box Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bridge",
+    "name": "Bridge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Bulgarian_Split_Squat",
+    "name": "Bulgarian Split Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Burpees",
+    "name": "Burpees",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Abs_Rotation",
+    "name": "Cable Abs Rotation",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Ankle_Strap_Inner_Thigh_Pull",
+    "name": "Cable Ankle Strap Inner Thigh Pull",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Axe_Throw",
+    "name": "Cable Axe Throw",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Behind_The_Neck_Lat_Pulldown",
+    "name": "Cable Behind The Neck Lat Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Bicep_Curl",
+    "name": "Cable Bicep Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Bicep_Pulldown",
+    "name": "Cable Bicep Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Calf_Raise",
+    "name": "Cable Calf Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Chest_Fly",
+    "name": "Cable Chest Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Chest_Press",
+    "name": "Cable Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Cross_Body_Tricep_Extension",
+    "name": "Cable Cross Body Tricep Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Crossover",
+    "name": "Cable Crossover",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Crossover_Reverse_Fly",
+    "name": "Cable Crossover Reverse Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Crunch",
+    "name": "Cable Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Deadlift",
+    "name": "Cable Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Decline_Chest_Press",
+    "name": "Cable Decline Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Diverging_Lat_Pulldown",
+    "name": "Cable Diverging Lat Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Drag_Curls",
+    "name": "Cable Drag Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_External_Rotation",
+    "name": "Cable External Rotation",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Face_Pull",
+    "name": "Cable Face Pull",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Forearm_Curl_Behind_the_Back",
+    "name": "Cable Forearm Curl Behind the Back",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Forearm_Curls",
+    "name": "Cable Forearm Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Forward_Tricep_Extension",
+    "name": "Cable Forward Tricep Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Front_Raise",
+    "name": "Cable Front Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Front_Squat",
+    "name": "Cable Front Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Glute_Kickback",
+    "name": "Cable Glute Kickback",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Hammer_Curls",
+    "name": "Cable Hammer Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_High_to_Low_Flyes",
+    "name": "Cable High to Low Flyes",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Hip_Abduction",
+    "name": "Cable Hip Abduction",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Hip_Adduction",
+    "name": "Cable Hip Adduction",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Hip_Extension",
+    "name": "Cable Hip Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Incline_Chest_Fly",
+    "name": "Cable Incline Chest Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Incline_Chest_Press",
+    "name": "Cable Incline Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Incline_Curls",
+    "name": "Cable Incline Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Internal_Rotation",
+    "name": "Cable Internal Rotation",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Lat_Prayer",
+    "name": "Cable Lat Prayer",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Lat_Pull_Through",
+    "name": "Cable Lat Pull Through",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Lat_Pulldown",
+    "name": "Cable Lat Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Lat_Pullover",
+    "name": "Cable Lat Pullover",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Lateral_Raise",
+    "name": "Cable Lateral Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Leg_Curl",
+    "name": "Cable Leg Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Leg_Press",
+    "name": "Cable Leg Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Low_to_High_Chest_Fly",
+    "name": "Cable Low to High Chest Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Lunge",
+    "name": "Cable Lunge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Lying_Triceps_Extension",
+    "name": "Cable Lying Triceps Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Overhead_Curls",
+    "name": "Cable Overhead Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Overhead_Tricep_Extension",
+    "name": "Cable Overhead Tricep Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Pull_Through",
+    "name": "Cable Pull Through",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Rear_Delt_Fly",
+    "name": "Cable Rear Delt Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Rear_Delt_Raise",
+    "name": "Cable Rear Delt Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Reverse_Curl",
+    "name": "Cable Reverse Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Reverse_Wrist_Curl",
+    "name": "Cable Reverse Wrist Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Romanian_Deadlift_RDL",
+    "name": "Cable Romanian Deadlift (RDL)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Rope_Front_Raise",
+    "name": "Cable Rope Front Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Row_Chest_Supported",
+    "name": "Cable Row (Chest Supported)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Russian_Twist",
+    "name": "Cable Russian Twist",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Seated_Crunch",
+    "name": "Cable Seated Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Seated_Lateral_Pull_Down",
+    "name": "Cable Seated Lateral Pull Down",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Seated_Row",
+    "name": "Cable Seated Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Shrug",
+    "name": "Cable Shrug",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Skull_Crushers",
+    "name": "Cable Skull Crushers",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Squat",
+    "name": "Cable Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Standing_Row",
+    "name": "Cable Standing Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Tricep_Extension",
+    "name": "Cable Tricep Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Tricep_Katana_Extensions",
+    "name": "Cable Tricep Katana Extensions",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Tricep_Kickback",
+    "name": "Cable Tricep Kickback",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Tricep_Pulldown",
+    "name": "Cable Tricep Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Tricep_Pushdown",
+    "name": "Cable Tricep Pushdown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Twisting_Chest_Press",
+    "name": "Cable Twisting Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Underhand_Pulldown",
+    "name": "Cable Underhand Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Underhand_Triceps_Pushdown",
+    "name": "Cable Underhand Triceps Pushdown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Upper_Cuts",
+    "name": "Cable Upper Cuts",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Upright_Rows",
+    "name": "Cable Upright Rows",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Wide_Row",
+    "name": "Cable Wide Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Woodchoppers",
+    "name": "Cable Woodchoppers",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Wrist_Curl",
+    "name": "Cable Wrist Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Wrist_Supination",
+    "name": "Cable Wrist Supination",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cable_Y_Raise",
+    "name": "Cable Y Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Calf_Extension_Machine",
+    "name": "Calf Extension Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Calf_Raise_Machine",
+    "name": "Calf Raise Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Calf_Raises",
+    "name": "Calf Raises",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cambered_Bar_Bench_Press",
+    "name": "Cambered Bar Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cannonball_Squats",
+    "name": "Cannonball Squats",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Chair_Squat",
+    "name": "Chair Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Chest_Fly_Machine",
+    "name": "Chest Fly Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Chest_Press_Machine",
+    "name": "Chest Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Chin_Up",
+    "name": "Chin Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Clamshells",
+    "name": "Clamshells",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Clean",
+    "name": "Clean",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Clean_and_Jerk",
+    "name": "Clean and Jerk",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Close_Grip_Bench_Press",
+    "name": "Close Grip Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Close_Grip_Chest_Press",
+    "name": "Close Grip Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Close_Grip_Lat_Pulldown",
+    "name": "Close Grip Lat Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Concentration_Curl",
+    "name": "Concentration Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Converging_Overhead_Press",
+    "name": "Converging Overhead Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Corpse_Crunch",
+    "name": "Corpse Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cross_Body_Lat_Pull_Around",
+    "name": "Cross Body Lat Pull Around",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cross_Body_Tricep_Extensions",
+    "name": "Cross Body Tricep Extensions",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Crucifix_Curl",
+    "name": "Crucifix Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Cuban_Press",
+    "name": "Cuban Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Curtsy_Lunge",
+    "name": "Curtsy Lunge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Curtsy_Squat",
+    "name": "Curtsy Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dead_Bug",
+    "name": "Dead Bug",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dead_Hang",
+    "name": "Dead Hang",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Decline_Bench_Press",
+    "name": "Decline Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Decline_Chest_Press_Machine",
+    "name": "Decline Chest Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Decline_Dumbbell_Fly",
+    "name": "Decline Dumbbell Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Decline_Oblique_Situp",
+    "name": "Decline Oblique Situp",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Decline_Push_Up",
+    "name": "Decline Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Decline_Sit_Up",
+    "name": "Decline Sit Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Defect_Knee_Raise",
+    "name": "Defect Knee Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Depth_Jumps",
+    "name": "Depth Jumps",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Diamond_Push_Up",
+    "name": "Diamond Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dips",
+    "name": "Dips",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dips_Machine",
+    "name": "Dips Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dive_Bomber_Push_Up",
+    "name": "Dive Bomber Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dragon_Flag",
+    "name": "Dragon Flag",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Duck_Walk",
+    "name": "Duck Walk",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Bench_Press",
+    "name": "Dumbbell Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Bicep_Curl",
+    "name": "Dumbbell Bicep Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Bulgarian_Split_Squat",
+    "name": "Dumbbell Bulgarian Split Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Calf_Raises",
+    "name": "Dumbbell Calf Raises",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Chest_Fly",
+    "name": "Dumbbell Chest Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Chest_Press",
+    "name": "Dumbbell Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Clean",
+    "name": "Dumbbell Clean",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Coffin_Press",
+    "name": "Dumbbell Coffin Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Cross_Body_Hammer_Curl",
+    "name": "Dumbbell Cross Body Hammer Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Deadlift",
+    "name": "Dumbbell Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Decline_Bench_Press",
+    "name": "Dumbbell Decline Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Drag_Curl",
+    "name": "Dumbbell Drag Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Front_Raise",
+    "name": "Dumbbell Front Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Gorilla_Row",
+    "name": "Dumbbell Gorilla Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Hammer_Curl",
+    "name": "Dumbbell Hammer Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Hammer_Press",
+    "name": "Dumbbell Hammer Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Hex_Press",
+    "name": "Dumbbell Hex Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_High_Pull",
+    "name": "Dumbbell High Pull",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Holds",
+    "name": "Dumbbell Holds",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Horizontal_External_Shoulder_Rotation",
+    "name": "Dumbbell Horizontal External Shoulder Rotation",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Horizontal_Internal_Shoulder_Rotation",
+    "name": "Dumbbell Horizontal Internal Shoulder Rotation",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Incline_Hex_Press",
+    "name": "Dumbbell Incline Hex Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Incline_Row",
+    "name": "Dumbbell Incline Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Incline_Shrug",
+    "name": "Dumbbell Incline Shrug",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Lateral_Raise",
+    "name": "Dumbbell Lateral Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Low_to_High_Chest_Fly",
+    "name": "Dumbbell Low to High Chest Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Lunge",
+    "name": "Dumbbell Lunge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Preacher_Curl",
+    "name": "Dumbbell Preacher Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Press",
+    "name": "Dumbbell Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Pullover",
+    "name": "Dumbbell Pullover",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Radial_Deviation",
+    "name": "Dumbbell Radial Deviation",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Rear_Delt_Fly",
+    "name": "Dumbbell Rear Delt Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Rear_Delt_Raise",
+    "name": "Dumbbell Rear Delt Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Reverse_Curls",
+    "name": "Dumbbell Reverse Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Reverse_Wrist_Curl",
+    "name": "Dumbbell Reverse Wrist Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Romanian_Deadlift_RDL",
+    "name": "Dumbbell Romanian Deadlift (RDL)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Row",
+    "name": "Dumbbell Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Row_Chest_Supported",
+    "name": "Dumbbell Row (Chest Supported)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Shoulder_Press",
+    "name": "Dumbbell Shoulder Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Shrug",
+    "name": "Dumbbell Shrug",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Side_Bend",
+    "name": "Dumbbell Side Bend",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Skull_Crushers",
+    "name": "Dumbbell Skull Crushers",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Snatch",
+    "name": "Dumbbell Snatch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Spider_Curl",
+    "name": "Dumbbell Spider Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Squat",
+    "name": "Dumbbell Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Step_Up",
+    "name": "Dumbbell Step Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Sumo_Squat",
+    "name": "Dumbbell Sumo Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Thruster",
+    "name": "Dumbbell Thruster",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Tricep_Kickback",
+    "name": "Dumbbell Tricep Kickback",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Triceps_Extension",
+    "name": "Dumbbell Triceps Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Twist_Curls",
+    "name": "Dumbbell Twist Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Wrist_Curl",
+    "name": "Dumbbell Wrist Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Dumbbell_Wrist_Rotations",
+    "name": "Dumbbell Wrist Rotations",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "DY_Row",
+    "name": "DY Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Eccentric_Heel_Drop",
+    "name": "Eccentric Heel Drop",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Elbow_Lever",
+    "name": "Elbow Lever",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Empty_Cans",
+    "name": "Empty Cans",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Anti_Gravity_Press",
+    "name": "EZ Bar Anti Gravity Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Close_Grip_Bench_Press",
+    "name": "EZ Bar Close Grip Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Curls",
+    "name": "EZ Bar Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Drag_Curl",
+    "name": "EZ Bar Drag Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Forearm_Curls",
+    "name": "EZ Bar Forearm Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_JM_Press",
+    "name": "EZ Bar JM Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Landmine_Twist",
+    "name": "EZ Bar Landmine Twist",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Lying_Pull_Over",
+    "name": "EZ Bar Lying Pull Over",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Overhead_Extensions",
+    "name": "EZ Bar Overhead Extensions",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Preacher_Curls",
+    "name": "EZ Bar Preacher Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Reverse_Grip_Curls",
+    "name": "EZ Bar Reverse Grip Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Reverse_Grip_Overhead_Press",
+    "name": "EZ Bar Reverse Grip Overhead Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Reverse_Grip_Row",
+    "name": "EZ Bar Reverse Grip Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Shoulder_Press",
+    "name": "EZ Bar Shoulder Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Skull_Crushers",
+    "name": "EZ Bar Skull Crushers",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Spider_Curls",
+    "name": "EZ Bar Spider Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "EZ_Bar_Upright_Row",
+    "name": "EZ Bar Upright Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Farmer_s_Walk",
+    "name": "Farmer's Walk",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Finger_Curls",
+    "name": "Finger Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Fire_Hydrants",
+    "name": "Fire Hydrants",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Floor_Back_Extension",
+    "name": "Floor Back Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Floor_Bench_Press",
+    "name": "Floor Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Flutter_Kicks",
+    "name": "Flutter Kicks",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Forearm_Gripper",
+    "name": "Forearm Gripper",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Forward_Step_Down",
+    "name": "Forward Step Down",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "French_Press",
+    "name": "French Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Frog_Crunch",
+    "name": "Frog Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Frog_Curls",
+    "name": "Frog Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Frog_Pumps",
+    "name": "Frog Pumps",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Frog_Stand",
+    "name": "Frog Stand",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Front_Lever",
+    "name": "Front Lever",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Front_Lever_Raise",
+    "name": "Front Lever Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Front_Plate_Raise",
+    "name": "Front Plate Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Front_Squat",
+    "name": "Front Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Gar_Hammer",
+    "name": "Gar Hammer",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Glute_Bridge",
+    "name": "Glute Bridge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Glute_Ham_Raise",
+    "name": "Glute Ham Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Glute_Kickback_Machine",
+    "name": "Glute Kickback Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Goblet_Split_Squat",
+    "name": "Goblet Split Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Goblet_Squat",
+    "name": "Goblet Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Good_Morning",
+    "name": "Good Morning",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Gripper",
+    "name": "Gripper",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hack_Squat",
+    "name": "Hack Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hack_Squat_Machine",
+    "name": "Hack Squat Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hammer_Curl",
+    "name": "Hammer Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hamstring_Curl_Machine",
+    "name": "Hamstring Curl Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Handstand",
+    "name": "Handstand",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Handstand_Push_Up",
+    "name": "Handstand Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hang_Clean",
+    "name": "Hang Clean",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hang_Power_Clean",
+    "name": "Hang Power Clean",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hang_Power_Snatch",
+    "name": "Hang Power Snatch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hang_Snatch",
+    "name": "Hang Snatch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hanging_Knee_Raise",
+    "name": "Hanging Knee Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hanging_Leg_Raise",
+    "name": "Hanging Leg Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hanging_Leg_Raise_Hold",
+    "name": "Hanging Leg Raise Hold",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hanging_Sit_Up",
+    "name": "Hanging Sit Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Heel_Elevated_Barbell_Squat",
+    "name": "Heel Elevated Barbell Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Heel_Elevated_Goblet_Squat",
+    "name": "Heel Elevated Goblet Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Heel_Elevated_Smith_Machine_Squat",
+    "name": "Heel Elevated Smith Machine Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Heel_Raise",
+    "name": "Heel Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Heel_Touches",
+    "name": "Heel Touches",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "High_Knees",
+    "name": "High Knees",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "High_Row_Machine",
+    "name": "High Row Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hip_Abduction_Machine",
+    "name": "Hip Abduction Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hip_Adduction_Machine",
+    "name": "Hip Adduction Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hip_Extension_Machine",
+    "name": "Hip Extension Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hip_Thrust",
+    "name": "Hip Thrust",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hip_Thrust_Machine",
+    "name": "Hip Thrust Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hollow_Body_Hold",
+    "name": "Hollow Body Hold",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hollow_Holds",
+    "name": "Hollow Holds",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Horizontal_Calf_Machine",
+    "name": "Horizontal Calf Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Horizontal_Leg_Press_Machine",
+    "name": "Horizontal Leg Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hyperextension_Machine",
+    "name": "Hyperextension Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Hyperextention",
+    "name": "Hyperextention",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "In_Out_Crunch",
+    "name": "In & Out Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Barbell_Bench_Press",
+    "name": "Incline Barbell Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Cable_Fly",
+    "name": "Incline Cable Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Chest_Press_Machine",
+    "name": "Incline Chest Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Dumbbell_Bench_Press",
+    "name": "Incline Dumbbell Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Dumbbell_Chest_Press",
+    "name": "Incline Dumbbell Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Dumbbell_Curl",
+    "name": "Incline Dumbbell Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Dumbbell_Fly",
+    "name": "Incline Dumbbell Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Dumbbell_Hammer_Curl",
+    "name": "Incline Dumbbell Hammer Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Leg_Raise",
+    "name": "Incline Leg Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Pec_Fly_Machine",
+    "name": "Incline Pec Fly Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Incline_Push_Up",
+    "name": "Incline Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Inclined_Leg_Press_Machine",
+    "name": "Inclined Leg Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Inverted_Row",
+    "name": "Inverted Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Inverted_Row_with_Underhand_Grip",
+    "name": "Inverted Row with Underhand Grip",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Jack_Squat",
+    "name": "Jack Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Jackknife_Sit_Ups",
+    "name": "Jackknife Sit Ups",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Jerk_Dip",
+    "name": "Jerk Dip",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "JM_Press",
+    "name": "JM Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Jump_Squat",
+    "name": "Jump Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Jumping_Jacks",
+    "name": "Jumping Jacks",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Jumping_Lunges",
+    "name": "Jumping Lunges",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Keenan_Flaps",
+    "name": "Keenan Flaps",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kelso_Shrug",
+    "name": "Kelso Shrug",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kettlebell_Clean",
+    "name": "Kettlebell Clean",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kettlebell_Goblet_Squat",
+    "name": "Kettlebell Goblet Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kettlebell_Press",
+    "name": "Kettlebell Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kettlebell_Side_Bend",
+    "name": "Kettlebell Side Bend",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kettlebell_Snatch",
+    "name": "Kettlebell Snatch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kettlebell_Step_Up",
+    "name": "Kettlebell Step Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kettlebell_Sumo_Deadlift",
+    "name": "Kettlebell Sumo Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kettlebell_Sumo_Squats",
+    "name": "Kettlebell Sumo Squats",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kettlebell_Swing",
+    "name": "Kettlebell Swing",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Knee_Tuck",
+    "name": "Knee Tuck",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kneeling_Ab_Wheel_Roll_Out",
+    "name": "Kneeling Ab Wheel Roll Out",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kneeling_Cable_Crunch",
+    "name": "Kneeling Cable Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kneeling_Incline_Push_Up",
+    "name": "Kneeling Incline Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kneeling_Plank",
+    "name": "Kneeling Plank",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kneeling_Push_Up",
+    "name": "Kneeling Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Kneeling_Side_Plank",
+    "name": "Kneeling Side Plank",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "L_Sit",
+    "name": "L Sit",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "L_Sit_Pull_Up",
+    "name": "L Sit Pull Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_180s",
+    "name": "Landmine 180s",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_Hack_Squat",
+    "name": "Landmine Hack Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_Kneeling_Shoulder_Press",
+    "name": "Landmine Kneeling Shoulder Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_Lateral_Raise",
+    "name": "Landmine Lateral Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_Meadows_Row",
+    "name": "Landmine Meadows Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_Romanian_Deadlift",
+    "name": "Landmine Romanian Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_Row",
+    "name": "Landmine Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_Shoulder_Press",
+    "name": "Landmine Shoulder Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_Side_Lunge",
+    "name": "Landmine Side Lunge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Landmine_Squat",
+    "name": "Landmine Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Larsen_Press",
+    "name": "Larsen Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lat_Pulldown_Machine",
+    "name": "Lat Pulldown Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lateral_Neck_Flexion_Machine",
+    "name": "Lateral Neck Flexion Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lateral_Neck_Flexion_Plate_Loaded",
+    "name": "Lateral Neck Flexion Plate Loaded",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lateral_Neck_Flexion_with_Belt",
+    "name": "Lateral Neck Flexion with Belt",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lateral_Raise_Machine",
+    "name": "Lateral Raise Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lateral_Skier_Jumps",
+    "name": "Lateral Skier Jumps",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lawnmower_Pulls",
+    "name": "Lawnmower Pulls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Leveraged_Squat",
+    "name": "Leveraged Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Linear_Leg_Press",
+    "name": "Linear Leg Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Log_Press",
+    "name": "Log Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Low_Row_Machine",
+    "name": "Low Row Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lunges",
+    "name": "Lunges",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lying_Dumbbell_External_Shoulder_Rotation",
+    "name": "Lying Dumbbell External Shoulder Rotation",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lying_Dumbbell_Internal_Shoulder_Rotation",
+    "name": "Lying Dumbbell Internal Shoulder Rotation",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lying_Leg_Curl_Machine",
+    "name": "Lying Leg Curl Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lying_Leg_Raise",
+    "name": "Lying Leg Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Lying_Windshield_Wiper",
+    "name": "Lying Windshield Wiper",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Machine_Calf_Press",
+    "name": "Machine Calf Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Machine_Flat_Press",
+    "name": "Machine Flat Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Machine_Front_Pulldown",
+    "name": "Machine Front Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Machine_Lat_Pullover",
+    "name": "Machine Lat Pullover",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Machine_Lower_Back_Extension",
+    "name": "Machine Lower Back Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Machine_Sissy_Hack_Squat",
+    "name": "Machine Sissy Hack Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Med_Ball_Slams",
+    "name": "Med Ball Slams",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Medicine_Ball_Power_Throw",
+    "name": "Medicine Ball Power Throw",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Military_Press",
+    "name": "Military Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Monkey_Row",
+    "name": "Monkey Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Mountain_Climbers",
+    "name": "Mountain Climbers",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "MTS_High_Row",
+    "name": "MTS High Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "MTS_Row",
+    "name": "MTS Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Muscle_Up",
+    "name": "Muscle Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Neck_Curl",
+    "name": "Neck Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Neck_Flexion_Machine",
+    "name": "Neck Flexion Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Neck_Flexion_Plate_Loaded",
+    "name": "Neck Flexion Plate Loaded",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Neck_Rotation_with_Belt",
+    "name": "Neck Rotation with Belt",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Neutral_Grip_Pull_Ups",
+    "name": "Neutral Grip Pull Ups",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Nordic_Hamstring_Curls",
+    "name": "Nordic Hamstring Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Oblique_Crunch",
+    "name": "Oblique Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Oblique_Rotation_Machine",
+    "name": "Oblique Rotation Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Oblique_Sit_Up",
+    "name": "Oblique Sit Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "One_Arm_Pull_Up",
+    "name": "One Arm Pull Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Overhead_Barbell_Press",
+    "name": "Overhead Barbell Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Overhead_Dumbbell_Press",
+    "name": "Overhead Dumbbell Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Overhead_Lunges",
+    "name": "Overhead Lunges",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Overhead_Press_Machine",
+    "name": "Overhead Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Overhead_Squat",
+    "name": "Overhead Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Overhead_Tricep_Extension",
+    "name": "Overhead Tricep Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Overhead_Tricep_Extension_Machine",
+    "name": "Overhead Tricep Extension Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pallof_Press",
+    "name": "Pallof Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pause_Squat",
+    "name": "Pause Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pec_Deck",
+    "name": "Pec Deck",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pec_Fly_Machine",
+    "name": "Pec Fly Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pendlay_Row",
+    "name": "Pendlay Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pendulum_Squat",
+    "name": "Pendulum Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Penguin_Crunch",
+    "name": "Penguin Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pike_Push_Up",
+    "name": "Pike Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pin_Squat",
+    "name": "Pin Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pistol_Squat",
+    "name": "Pistol Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Planche_Push_Up",
+    "name": "Planche Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plank_Jacks",
+    "name": "Plank Jacks",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plank_Row",
+    "name": "Plank Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plank_to_Push_Up",
+    "name": "Plank to Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plank_with_Shoulder_taps",
+    "name": "Plank with Shoulder taps",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Planks",
+    "name": "Planks",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Curls",
+    "name": "Plate Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Flip",
+    "name": "Plate Flip",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Front_Raise",
+    "name": "Plate Front Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Behind_the_Neck_Press",
+    "name": "Plate Loaded Behind the Neck Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Chest_Press",
+    "name": "Plate Loaded Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Chest_Pullover",
+    "name": "Plate Loaded Chest Pullover",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_High_Row",
+    "name": "Plate Loaded High Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Hip_Thrust",
+    "name": "Plate Loaded Hip Thrust",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Incline_Chest_Press",
+    "name": "Plate Loaded Incline Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Incline_Fly",
+    "name": "Plate Loaded Incline Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Lat_Pulldown",
+    "name": "Plate Loaded Lat Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Lateral_Raises",
+    "name": "Plate Loaded Lateral Raises",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Low_Row",
+    "name": "Plate Loaded Low Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Preacher_Curls",
+    "name": "Plate Loaded Preacher Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Row",
+    "name": "Plate Loaded Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Seated_Dip",
+    "name": "Plate Loaded Seated Dip",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Shrugs",
+    "name": "Plate Loaded Shrugs",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Squat_Press",
+    "name": "Plate Loaded Squat Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Wide_Chest_Press",
+    "name": "Plate Loaded Wide Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Loaded_Wide_Row",
+    "name": "Plate Loaded Wide Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Pinch",
+    "name": "Plate Pinch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Pinch_Press",
+    "name": "Plate Pinch Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Raise",
+    "name": "Plate Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plate_Wrist_Curl",
+    "name": "Plate Wrist Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Plyometric_Push_Up",
+    "name": "Plyometric Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pogo_Jumps",
+    "name": "Pogo Jumps",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Power_Clean",
+    "name": "Power Clean",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Power_Jerk",
+    "name": "Power Jerk",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Power_Snatch",
+    "name": "Power Snatch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Preacher_Curl",
+    "name": "Preacher Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Preacher_Curl_Machine",
+    "name": "Preacher Curl Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Preacher_Forearm_Curls",
+    "name": "Preacher Forearm Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Preacher_Hammer_Curl",
+    "name": "Preacher Hammer Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pseudo_Push_Ups",
+    "name": "Pseudo Push Ups",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pull_Ups",
+    "name": "Pull Ups",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Pullover_Machine",
+    "name": "Pullover Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Push_Press",
+    "name": "Push Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Push_Ups",
+    "name": "Push Ups",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Rack_Pull",
+    "name": "Rack Pull",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Rear_Delt_Row",
+    "name": "Rear Delt Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Rear_Deltoid_Fly_Machine",
+    "name": "Rear Deltoid Fly Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Reverse_Back_Extension",
+    "name": "Reverse Back Extension",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Reverse_Barbell_Wrist_Curl",
+    "name": "Reverse Barbell Wrist Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Reverse_Crunch",
+    "name": "Reverse Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Reverse_Grip_Bent_Over_Row",
+    "name": "Reverse Grip Bent Over Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Reverse_Pec_Deck",
+    "name": "Reverse Pec Deck",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Reverse_Plank",
+    "name": "Reverse Plank",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Reverse_Y_Raise",
+    "name": "Reverse Y Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Roller_Hamstring_Curl",
+    "name": "Roller Hamstring Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Romanian_Deadlift_Machine_RDL",
+    "name": "Romanian Deadlift Machine (RDL)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Rope_Hammer_Curl",
+    "name": "Rope Hammer Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Russian_Twist",
+    "name": "Russian Twist",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Safety_Bar_Squat",
+    "name": "Safety Bar Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Sandbag_Squat",
+    "name": "Sandbag Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Scapular_Protraction",
+    "name": "Scapular Protraction",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Scapular_Pulls",
+    "name": "Scapular Pulls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Scarecrow_Hold",
+    "name": "Scarecrow Hold",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Scissor_Jumps",
+    "name": "Scissor Jumps",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Scissor_Kicks",
+    "name": "Scissor Kicks",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seal_Row",
+    "name": "Seal Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Box_Jump",
+    "name": "Seated Box Jump",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Cable_Chest_Fly",
+    "name": "Seated Cable Chest Fly",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Cable_Rows",
+    "name": "Seated Cable Rows",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Calf_Press_Machine",
+    "name": "Seated Calf Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Calf_Raise_Machine",
+    "name": "Seated Calf Raise Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Chest_Press_Machine",
+    "name": "Seated Chest Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Dip_Machine",
+    "name": "Seated Dip Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Leg_Curl_Machine",
+    "name": "Seated Leg Curl Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Leg_Extension_Machine",
+    "name": "Seated Leg Extension Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Leg_Press_Machine",
+    "name": "Seated Leg Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Machine_Rear_Delt_Row",
+    "name": "Seated Machine Rear Delt Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Machine_Tricep_Dip",
+    "name": "Seated Machine Tricep Dip",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Military_Press",
+    "name": "Seated Military Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Row_Machine",
+    "name": "Seated Row Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Seated_Shoulder_Press_Machine",
+    "name": "Seated Shoulder Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Shoulder_Press_Machine",
+    "name": "Shoulder Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Shrug_Machine",
+    "name": "Shrug Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Side_Lunges_Bodyweight",
+    "name": "Side Lunges (Bodyweight)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Side_Plank",
+    "name": "Side Plank",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Side_to_Side_Push_Up",
+    "name": "Side to Side Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Silver_Dollar_Deadlift",
+    "name": "Silver Dollar Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Single_Arm_Push_Up",
+    "name": "Single Arm Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Sissy_Squats",
+    "name": "Sissy Squats",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Sit_Ups",
+    "name": "Sit Ups",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Sled_Pull",
+    "name": "Sled Pull",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Sled_Push",
+    "name": "Sled Push",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Bench_Press",
+    "name": "Smith Machine Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Calf_Raise",
+    "name": "Smith Machine Calf Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Deadlift",
+    "name": "Smith Machine Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Hack_Squat",
+    "name": "Smith Machine Hack Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Hip_Thrust",
+    "name": "Smith Machine Hip Thrust",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Incline_Bench_Press",
+    "name": "Smith Machine Incline Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_JM_Press",
+    "name": "Smith Machine JM Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Lunges",
+    "name": "Smith Machine Lunges",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Overhead_Press",
+    "name": "Smith Machine Overhead Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Overhead_Squat",
+    "name": "Smith Machine Overhead Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Reverse_Calf_Raise",
+    "name": "Smith Machine Reverse Calf Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Reverse_Grip_Press",
+    "name": "Smith Machine Reverse Grip Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Romanian_Deadlift_RDL",
+    "name": "Smith Machine Romanian Deadlift (RDL)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Row",
+    "name": "Smith Machine Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Seated_Calf_Raise",
+    "name": "Smith Machine Seated Calf Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Shoulder_Press",
+    "name": "Smith Machine Shoulder Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Shrug",
+    "name": "Smith Machine Shrug",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Sissy_Squat",
+    "name": "Smith Machine Sissy Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Skull_Crushers",
+    "name": "Smith Machine Skull Crushers",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Split_Squats",
+    "name": "Smith Machine Split Squats",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Squat",
+    "name": "Smith Machine Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Smith_Machine_Upright_Row",
+    "name": "Smith Machine Upright Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Snatch_Grip_Behind_the_Neck_Press",
+    "name": "Snatch Grip Behind the Neck Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Spider_Hammer_Curls",
+    "name": "Spider Hammer Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Spiderman_Push_Up",
+    "name": "Spiderman Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Split_Jerk",
+    "name": "Split Jerk",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Squat_Jerk",
+    "name": "Squat Jerk",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Squat_Jump",
+    "name": "Squat Jump",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Cable_Chest_Press",
+    "name": "Standing Cable Chest Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Cable_Crunch",
+    "name": "Standing Cable Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Cable_Lift",
+    "name": "Standing Cable Lift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Cable_Wood_Chop",
+    "name": "Standing Cable Wood Chop",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Calf_Raise",
+    "name": "Standing Calf Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Calf_Raise_Machine",
+    "name": "Standing Calf Raise Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Leg_Curl_Machine",
+    "name": "Standing Leg Curl Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Long_Jump",
+    "name": "Standing Long Jump",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Oblique_Cable_Crunch",
+    "name": "Standing Oblique Cable Crunch",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Standing_Side_Dips",
+    "name": "Standing Side Dips",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Steering_Wheels",
+    "name": "Steering Wheels",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Step_Up",
+    "name": "Step Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Stiff_Legged_Deadlift",
+    "name": "Stiff Legged Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Straight_Arm_Cable_Pulldown",
+    "name": "Straight Arm Cable Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Suitcase_Carry",
+    "name": "Suitcase Carry",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Suitcase_Deadlift",
+    "name": "Suitcase Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Super_Squat",
+    "name": "Super Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Superman",
+    "name": "Superman",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Superman_Hold",
+    "name": "Superman Hold",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Supine_Press",
+    "name": "Supine Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "T_Bar_Row",
+    "name": "T Bar Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "T_Bar_Row_Chest_Supported",
+    "name": "T Bar Row (Chest Supported)",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Tate_Press",
+    "name": "Tate Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Tibialis_Raise",
+    "name": "Tibialis Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Toe_Touches",
+    "name": "Toe Touches",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Towel_Pull_Up",
+    "name": "Towel Pull Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Trap_Bar_Deadlift",
+    "name": "Trap Bar Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Trap_Bar_Shrug",
+    "name": "Trap Bar Shrug",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Tricep_Dips",
+    "name": "Tricep Dips",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Tricep_Extension_Machine",
+    "name": "Tricep Extension Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Tricep_Press_Machine",
+    "name": "Tricep Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Triceps_Pushdown",
+    "name": "Triceps Pushdown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Tuck_Front_Lever",
+    "name": "Tuck Front Lever",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Tuck_Jump",
+    "name": "Tuck Jump",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Tuck_Planche",
+    "name": "Tuck Planche",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Turkish_Getup",
+    "name": "Turkish Getup",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Twist_Dumbbell_Curl",
+    "name": "Twist Dumbbell Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Underhand_Cable_Lat_Pulldown",
+    "name": "Underhand Cable Lat Pulldown",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Underhand_Dumbbell_Bench_Press",
+    "name": "Underhand Dumbbell Bench Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Underhand_Pulldowns",
+    "name": "Underhand Pulldowns",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "V_Squat",
+    "name": "V Squat",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "V_Up",
+    "name": "V Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Vertical_Chest_Press_Machine",
+    "name": "Vertical Chest Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Vertical_Leg_Press_Machine",
+    "name": "Vertical Leg Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Vertical_Pec_Fly_Machine",
+    "name": "Vertical Pec Fly Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Vertical_Traction_Machine",
+    "name": "Vertical Traction Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Viking_Press",
+    "name": "Viking Press",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Waiter_Curls",
+    "name": "Waiter Curls",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Walking_Lunge",
+    "name": "Walking Lunge",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Wall_Sit",
+    "name": "Wall Sit",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Weighted_Jumps",
+    "name": "Weighted Jumps",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Wide_Chest_Press_Machine",
+    "name": "Wide Chest Press Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Wide_Grip_Pull_Up",
+    "name": "Wide Grip Pull Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Wide_Push_Up",
+    "name": "Wide Push Up",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Wide_Row_Machine",
+    "name": "Wide Row Machine",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Windshield_Wipers",
+    "name": "Windshield Wipers",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Wrist_Belt_Curl",
+    "name": "Wrist Belt Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Wrist_Roller",
+    "name": "Wrist Roller",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Y_Raise",
+    "name": "Y Raise",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Yates_Row",
+    "name": "Yates Row",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Zercher_Deadlift",
+    "name": "Zercher Deadlift",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Zercher_Squats",
+    "name": "Zercher Squats",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  },
+  {
+    "id": "Zottman_Curl",
+    "name": "Zottman Curl",
+    "equipment": null,
+    "primaryMuscles": [],
+    "category": "",
+    "instructions": []
+  }
+]

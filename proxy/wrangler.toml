@@ -1,0 +1,18 @@
+name = "fittrack-ai"
+main = "worker.js"
+compatibility_date = "2026-07-01"
+
+# Per-IP rate limit (period must be 10 or 60). 20 requests/minute per IP is
+# generous for real use and caps abuse. Raise `limit` if needed.
+[[ratelimits]]
+name = "AI_RATE_LIMIT"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 20
+  period = 60
+
+# Secrets are NOT set here — run these once after `npm i -g wrangler` and `wrangler login`:
+#   wrangler secret put GEMINI_KEY
+#   wrangler secret put APP_TOKEN   # optional
+# Then: wrangler deploy

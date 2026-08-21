@@ -1,0 +1,48 @@
+name: OnTrack
+options:
+  bundleIdPrefix: com.ibrahimansari
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+configFiles:
+  Debug: Config/Secrets.xcconfig
+  Release: Config/Secrets.xcconfig
+targets:
+  OnTrack:
+    type: application
+    platform: iOS
+    sources:
+      - OnTrack/Sources
+      - path: OnTrack/PrivacyInfo.xcprivacy
+        buildPhase: resources
+    assetCatalogs:
+      - OnTrack/Sources/Assets.xcassets
+    entitlements:
+      path: OnTrack/OnTrack.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        # iCloud/CloudKit + aps-environment removed: free Personal Team accounts
+        # don't support them. Restore when on the paid Developer Program:
+        #   com.apple.developer.icloud-services: [CloudKit]
+        #   com.apple.developer.icloud-container-identifiers: [iCloud.com.ibrahimansari.ontrackapp]
+        #   aps-environment: development
+    info:
+      path: OnTrack/Info.plist
+      properties:
+        UILaunchScreen: {}
+        CFBundleDisplayName: OnTrack
+        ITSAppUsesNonExemptEncryption: false
+        NSHealthShareUsageDescription: OnTrack reads your body weight to show trends and import weigh-ins logged in other apps.
+        NSHealthUpdateUsageDescription: OnTrack saves weights you log to Apple Health.
+        NSCameraUsageDescription: OnTrack uses the camera to scan food barcodes, photograph meals for nutrition estimates, and take progress photos with your weigh-ins.
+        USDA_API_KEY: $(USDA_API_KEY)
+        APP_TOKEN: $(APP_TOKEN)
+    settings:
+      base:
+        DEVELOPMENT_TEAM: UDD3CSDWN3
+        PRODUCT_BUNDLE_IDENTIFIER: com.ibrahimansari.ontrackapp
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.10"
+        CURRENT_PROJECT_VERSION: 4
+        MARKETING_VERSION: 1.1.0
+        GENERATE_INFOPLIST_FILE: false

@@ -1,0 +1,8 @@
+Config/Secrets.xcconfig
+*.xcodeproj
+xcuserdata/
+.DS_Store
+build/
+DerivedData/
+proxy/.wrangler/
+.claude/
