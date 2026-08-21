@@ -1,5 +1,7 @@
 # OnTrack
 
+[<img src="https://img.shields.io/badge/Download_on_the-App_Store-0D96F6?style=for-the-badge&logo=apple&logoColor=white" alt="Download on the App Store" />](https://apps.apple.com/us/app/ontrack-fitness-faith/id6791721388)
+
 All-in-one personal fitness app for iPhone: body weight, gym workouts/splits, diet tracking, and an AI coach powered by Google Gemini. Local-first (SwiftData) — no accounts, no user-data backend.
 
 ## Setup
