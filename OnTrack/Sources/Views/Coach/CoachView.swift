@@ -71,7 +71,7 @@ struct CoachView: View {
                     Button("Clear") { messages = []; errorText = nil }
                 }
             }
-            .onAppear { handlePendingWeeklyRecap() }
+
             .sheet(isPresented: $showConsent) {
                 AIConsentSheet { if let p = pendingPrompt { pendingPrompt = nil; send(p) } }
             }
@@ -121,13 +121,6 @@ struct CoachView: View {
             if msg.role == "assistant" { Spacer(minLength: 40) }
         }
         .id(msg.id)
-    }
-
-    private func handlePendingWeeklyRecap() {
-        if UserDefaults.standard.bool(forKey: "pendingWeeklyRecap") {
-            UserDefaults.standard.set(false, forKey: "pendingWeeklyRecap")
-            send("Give me a full recap of my week: weight trend, diet quality vs my targets, and training. What went well, what needs work?")
-        }
     }
 
     private func send(_ text: String) {

@@ -45,9 +45,7 @@ struct DietView: View {
                 get: { addingToMeal.map { MealTarget(meal: $0) } },
                 set: { addingToMeal = $0?.meal })
             ) { target in
-                FoodSearchView(meal: target.meal, day: day) {
-                    refreshCheckInNotification()
-                }
+                FoodSearchView(meal: target.meal, day: day) {}
             }
         }
     }
@@ -141,6 +139,12 @@ struct DietView: View {
         }
     }
 
+    private func defaultServingLabel(_ entry: DiaryEntry) -> String {
+        let servings = entry.numberOfServings.formatted(.number.precision(.fractionLength(0...1)))
+        let size = (entry.food?.servingSize ?? 0).formatted(.number.precision(.fractionLength(0...1)))
+        return "\(servings) × \(size)\(entry.food?.servingUnit ?? "")"
+    }
+
     private func mealSection(_ meal: String) -> some View {
         let entries = dayEntries.filter { $0.meal == meal }
         return Section {
@@ -148,8 +152,13 @@ struct DietView: View {
                 HStack(spacing: 12) {
                     FoodThumbnail(imageFilename: entry.food?.imageFilename, source: entry.food?.source, size: 40)
                     VStack(alignment: .leading) {
-                        Text(entry.food?.name ?? "Unknown")
-                        Text("\(entry.numberOfServings, format: .number.precision(.fractionLength(0...1))) × \(entry.food?.servingSize ?? 0, format: .number.precision(.fractionLength(0...1)))\(entry.food?.servingUnit ?? "")")
+                        HStack(spacing: 4) {
+                            Text(entry.food?.name ?? "Unknown")
+                            if entry.food?.source == "ai" {
+                                Text("Estimated").font(.caption2.bold()).foregroundStyle(.orange)
+                            }
+                        }
+                        Text(entry.portionLabel.isEmpty ? defaultServingLabel(entry) : entry.portionLabel)
                             .font(.caption).foregroundStyle(.secondary)
                     }
                     Spacer()
@@ -184,16 +193,5 @@ struct DietView: View {
             context.delete(e)
         }
         pendingDeletion = []
-        refreshCheckInNotification()
-    }
-
-    private func refreshCheckInNotification() {
-        guard let profile = profiles.first else { return }
-        let cal = Calendar.current
-        let todayCals = allEntries
-            .filter { cal.isDateInToday($0.date) }
-            .reduce(0) { $0 + $1.calories }
-        let target = Calculations.calorieTarget(profile: profile, weightKg: weights.first?.weightKg ?? 70)
-        NotificationService.shared.rescheduleDailyCheckIn(caloriesLogged: todayCals, target: target)
     }
 }

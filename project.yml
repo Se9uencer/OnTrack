@@ -43,6 +43,38 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.ibrahimansari.ontrackapp
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.10"
-        CURRENT_PROJECT_VERSION: 4
-        MARKETING_VERSION: 1.1.0
+        CURRENT_PROJECT_VERSION: 5
+        MARKETING_VERSION: 1.2.0
         GENERATE_INFOPLIST_FILE: false
+  OnTrackTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - OnTrackTests
+    dependencies:
+      - target: OnTrack
+    settings:
+      base:
+        SWIFT_VERSION: "5.10"
+        GENERATE_INFOPLIST_FILE: true
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/OnTrack.app/OnTrack"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+schemes:
+  OnTrack:
+    build:
+      targets:
+        OnTrack: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - OnTrackTests
+  OnTrackTests:
+    build:
+      targets:
+        OnTrackTests: all
+    test:
+      config: Debug
+      targets:
+        - OnTrackTests

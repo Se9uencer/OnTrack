@@ -5,8 +5,9 @@ struct FoodSearchResult: Identifiable, Hashable {
     let id = UUID()
     let name: String
     let brand: String?
-    let source: String // "openFoodFacts" | "usda"
+    let source: String // "openFoodFacts" | "usda" | "fndds"
     let barcode: String?
+    var fdcId: String? = nil // 'let' with a default is excluded from Swift's memberwise init; 'var' keeps it settable
     let servingSize: Double
     let servingUnit: String
     let calories: Double // per serving
@@ -15,7 +16,7 @@ struct FoodSearchResult: Identifiable, Hashable {
     let fat: Double
 
     func toFoodItem() -> FoodItem {
-        FoodItem(name: name, brand: brand, source: source, barcode: barcode,
+        FoodItem(name: name, brand: brand, source: source, barcode: barcode, fdcId: fdcId,
                  servingSize: servingSize, servingUnit: servingUnit,
                  calories: calories, protein: protein, carbs: carbs, fat: fat)
     }

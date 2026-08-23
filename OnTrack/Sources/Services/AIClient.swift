@@ -99,6 +99,38 @@ enum AIClient {
         let fat_g: Double
     }
 
+    /// Text-only estimate for a food the local/online search couldn't find at all — the
+    /// empty-search-result fallback (not the paywalled photo/coach features; an empty search
+    /// is broken core functionality, not an upsell). Caller is responsible for rate limiting.
+    static func estimateFood(name: String) async throws -> MealEstimate {
+        let prompt = "You are a nutritionist. Estimate the nutrition of a typical single serving of: \(name). Respond with ONLY a JSON object, no other text, in exactly this format: {\"name\": \"short dish name\", \"calories\": 0, \"protein_g\": 0, \"carbs_g\": 0, \"fat_g\": 0}"
+        var req = proxyRequest(timeout: 20)
+        req.httpBody = try JSONSerialization.data(withJSONObject: [
+            "messages": [["role": "user", "content": prompt]],
+            "temperature": 0.2,
+            "max_tokens": 150,
+        ])
+        let (data, response) = try await URLSession.shared.data(for: req)
+        if let http = response as? HTTPURLResponse, http.statusCode != 200 {
+            throw http.statusCode == 429 ? AIError.rateLimited : AIError.http(http.statusCode)
+        }
+        struct Completion: Decodable {
+            struct Choice: Decodable {
+                struct Msg: Decodable { let content: String }
+                let message: Msg
+            }
+            let choices: [Choice]
+        }
+        let content = try JSONDecoder().decode(Completion.self, from: data)
+            .choices.first?.message.content ?? ""
+        guard let start = content.firstIndex(of: "{"),
+              let end = content.lastIndex(of: "}"),
+              let jsonData = String(content[start...end]).data(using: .utf8),
+              let estimate = try? JSONDecoder().decode(MealEstimate.self, from: jsonData)
+        else { throw AIError.http(422) }
+        return estimate
+    }
+
     static func estimateMeal(imageJPEG: Data, description: String?) async throws -> MealEstimate {
         var prompt = """
         You are a nutritionist. Estimate the nutrition of the ENTIRE visible portion of food in this photo. \

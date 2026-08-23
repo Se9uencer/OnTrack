@@ -25,6 +25,7 @@ struct OnTrackApp: App {
             )
         }
         NotificationService.shared.setupDelegate()
+        MigrationService.dedupeFoodItems(in: container.mainContext)
     }
 
     var body: some Scene {
