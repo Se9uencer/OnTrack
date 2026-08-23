@@ -8,9 +8,6 @@ struct SettingsView: View {
     @Query private var profiles: [UserProfile]
     @Query(sort: \BodyWeightEntry.date, order: .reverse) private var weights: [BodyWeightEntry]
     @AppStorage("useMetric") private var useMetric = false
-    @AppStorage("weighInReminderEnabled") private var reminderEnabled = true
-    @AppStorage("weighInReminderHour") private var reminderHour = 8
-    @AppStorage("weighInReminderMinute") private var reminderMinute = 0
     @AppStorage("aiConsentGiven") private var aiConsentGiven = false
     @AppStorage("isPro") private var isProDebug = true
 
@@ -32,17 +29,6 @@ struct SettingsView: View {
                         Task { try? await HealthKitService.shared.requestAuthorization() }
                     }
                 }
-                Section {
-                    Toggle("Daily weigh-in reminder", isOn: $reminderEnabled)
-                    if reminderEnabled {
-                        DatePicker("Reminder time", selection: reminderTimeBinding, displayedComponents: .hourAndMinute)
-                    }
-                } footer: {
-                    Text("A one-time nudge each day if you haven't logged a weigh-in yet.")
-                }
-                .onChange(of: reminderEnabled) { _, _ in refreshReminder() }
-                .onChange(of: reminderHour) { _, _ in refreshReminder() }
-                .onChange(of: reminderMinute) { _, _ in refreshReminder() }
                 Section {
                     Toggle("Share data with AI (Google Gemini)", isOn: $aiConsentGiven)
                 } header: {
@@ -69,25 +55,6 @@ struct SettingsView: View {
     }
 
     private var latestWeightKg: Double { weights.first?.weightKg ?? 70 }
-
-    private var reminderTimeBinding: Binding<Date> {
-        Binding(
-            get: {
-                Calendar.current.date(bySettingHour: reminderHour, minute: reminderMinute, second: 0, of: Date()) ?? Date()
-            },
-            set: { newDate in
-                let comps = Calendar.current.dateComponents([.hour, .minute], from: newDate)
-                reminderHour = comps.hour ?? 8
-                reminderMinute = comps.minute ?? 0
-            })
-    }
-
-    private func refreshReminder() {
-        let loggedToday = weights.contains { Calendar.current.isDateInToday($0.date) }
-        NotificationService.shared.rescheduleWeighInReminder(
-            enabled: reminderEnabled, alreadyLoggedToday: loggedToday,
-            hour: reminderHour, minute: reminderMinute)
-    }
 
     @ViewBuilder
     private func profileSection(_ profile: UserProfile) -> some View {

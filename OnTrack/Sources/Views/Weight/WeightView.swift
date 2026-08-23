@@ -8,9 +8,6 @@ struct WeightView: View {
     @Environment(\.scenePhase) private var scenePhase
     @Query(sort: \BodyWeightEntry.date, order: .reverse) private var entries: [BodyWeightEntry]
     @AppStorage("useMetric") private var useMetric = false
-    @AppStorage("weighInReminderEnabled") private var reminderEnabled = true
-    @AppStorage("weighInReminderHour") private var reminderHour = 8
-    @AppStorage("weighInReminderMinute") private var reminderMinute = 0
     @State private var showingLog = false
     @State private var showGallery = false
     @State private var galleryStart: BodyWeightEntry?
@@ -52,16 +49,14 @@ struct WeightView: View {
                 ProgressGalleryView(startAt: galleryStart)
             }
             .sheet(isPresented: $showingLog) {
-                LogWeightSheet { refreshReminder() }
+                LogWeightSheet()
             }
             .task {
                 await HealthKitService.shared.importExternalWeights(context: context)
-                refreshReminder()
             }
             .onChange(of: scenePhase) { _, phase in
                 if phase == .active {
                     Task { await HealthKitService.shared.importExternalWeights(context: context) }
-                    refreshReminder()
                 }
             }
         }
@@ -101,16 +96,6 @@ struct WeightView: View {
         }
     }
 
-    private var loggedToday: Bool {
-        entries.contains { Calendar.current.isDateInToday($0.date) }
-    }
-
-    private func refreshReminder() {
-        NotificationService.shared.rescheduleWeighInReminder(
-            enabled: reminderEnabled, alreadyLoggedToday: loggedToday,
-            hour: reminderHour, minute: reminderMinute)
-    }
-
     private var chart: some View {
         let recent = entries.prefix(90).reversed()
         return Chart(recent) { entry in
@@ -130,8 +115,6 @@ struct WeightView: View {
 // MARK: - Log weight (with optional progress photo)
 
 struct LogWeightSheet: View {
-    var onSaved: () -> Void
-
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     @AppStorage("useMetric") private var useMetric = false
@@ -215,7 +198,6 @@ struct LogWeightSheet: View {
         let filename = image.flatMap { downscaledJPEG($0) }.flatMap { ImageStore.save($0) }
         context.insert(BodyWeightEntry(weightKg: kg, photoFilename: filename))
         Task { try? await HealthKitService.shared.saveWeight(kg, date: Date()) }
-        onSaved()
         dismiss()
     }
 

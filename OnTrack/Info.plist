@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>APP_TOKEN</key>
+	<string>$(APP_TOKEN)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -17,11 +19,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSCameraUsageDescription</key>
 	<string>OnTrack uses the camera to scan food barcodes, photograph meals for nutrition estimates, and take progress photos with your weigh-ins.</string>
 	<key>NSHealthShareUsageDescription</key>
@@ -32,7 +34,5 @@
 	<dict/>
 	<key>USDA_API_KEY</key>
 	<string>$(USDA_API_KEY)</string>
-	<key>APP_TOKEN</key>
-	<string>$(APP_TOKEN)</string>
 </dict>
 </plist>

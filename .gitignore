@@ -6,3 +6,4 @@ build/
 DerivedData/
 proxy/.wrangler/
 .claude/
+tools/.cache/

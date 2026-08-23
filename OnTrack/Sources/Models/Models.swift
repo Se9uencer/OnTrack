@@ -106,8 +106,9 @@ final class LoggedSet {
 final class FoodItem {
     var name: String = ""
     var brand: String? = nil
-    var source: String = "manual" // "openFoodFacts" | "usda" | "manual"
+    var source: String = "manual" // "openFoodFacts" | "usda" | "fndds" | "manual" | "ai" | "photo"
     var barcode: String? = nil
+    var fdcId: String? = nil // USDA FoodData Central id, when the row came from the bundled database or a USDA lookup
     var servingSize: Double = 100
     var servingUnit: String = "g"
     // Macros are PER SERVING.
@@ -119,7 +120,7 @@ final class FoodItem {
     var createdAt: Date = Date()
     var imageFilename: String? = nil // photo meals: file in Documents/FoodImages (see ImageStore)
 
-    init(name: String, brand: String? = nil, source: String, barcode: String? = nil,
+    init(name: String, brand: String? = nil, source: String, barcode: String? = nil, fdcId: String? = nil,
          servingSize: Double, servingUnit: String,
          calories: Double, protein: Double, carbs: Double, fat: Double,
          imageFilename: String? = nil) {
@@ -127,6 +128,7 @@ final class FoodItem {
         self.brand = brand
         self.source = source
         self.barcode = barcode
+        self.fdcId = fdcId
         self.servingSize = servingSize
         self.servingUnit = servingUnit
         self.calories = calories
@@ -134,6 +136,14 @@ final class FoodItem {
         self.carbs = carbs
         self.fat = fat
         self.imageFilename = imageFilename
+    }
+
+    /// Identity for merging repeat catalog lookups into one row. fdcId/barcode carry real
+    /// identity; name+brand+source is the fallback for OFF results without a barcode.
+    var dedupeKey: String {
+        if let fdcId { return "fdc:\(fdcId)" }
+        if let barcode { return "upc:\(barcode)" }
+        return "\(source)|\(name.lowercased())|\(brand?.lowercased() ?? "")"
     }
 }
 
@@ -143,12 +153,21 @@ final class DiaryEntry {
     var meal: String = "breakfast" // breakfast | lunch | dinner | snack
     var food: FoodItem? = nil
     var numberOfServings: Double = 1
+    // Portion detail, added 1.2.0. Frozen at log time so historical entries stay numerically
+    // correct even if the food's bundled portion list changes later. Pre-1.2.0 rows default to
+    // grams=0/portionLabel="" (both defaulted -> lightweight-migration-safe) and keep rendering
+    // exactly as before; nothing reads these as authoritative until they're non-zero.
+    var grams: Double = 0
+    var portionLabel: String = ""
 
-    init(date: Date = Date(), meal: String, food: FoodItem, numberOfServings: Double = 1) {
+    init(date: Date = Date(), meal: String, food: FoodItem, numberOfServings: Double = 1,
+         grams: Double = 0, portionLabel: String = "") {
         self.date = date
         self.meal = meal
         self.food = food
         self.numberOfServings = numberOfServings
+        self.grams = grams
+        self.portionLabel = portionLabel
     }
 
     var calories: Double { (food?.calories ?? 0) * numberOfServings }
