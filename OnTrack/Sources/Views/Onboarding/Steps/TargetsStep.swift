@@ -1,30 +1,16 @@
 import SwiftUI
 
 /// The payoff screen: animates the computed targets in from empty rings. Read-only —
-/// this is where the seven profile screens earn their keep before the "Get Started" CTA
-/// (owned by OnboardingFlow) commits the profile.
+/// this is where the seven profile screens earn their keep, right before the
+/// interactive core-loop demos.
 struct TargetsStep: View {
     let draft: OnboardingDraft
     @AppStorage("useMetric") private var useMetric = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var revealed = false
 
-    private var weightKg: Double { draft.weightKg(metric: useMetric) ?? 70 }
-
-    private var preview: (cals: Double, protein: Double, carbs: Double, fat: Double) {
-        let p = UserProfile()
-        p.age = draft.age
-        p.sex = draft.sex
-        p.heightCm = draft.heightCm(metric: useMetric) ?? 175
-        p.activityLevel = draft.activityLevel
-        p.weeklyRateLbs = draft.weeklyRateLbs
-        let cals = Calculations.calorieTarget(profile: p, weightKg: weightKg)
-        let m = Calculations.macroTargets(profile: p, weightKg: weightKg)
-        return (cals, m.protein, m.carbs, m.fat)
-    }
-
     var body: some View {
-        let t = preview
+        let t = draft.previewTargets(metric: useMetric)
         StepScaffold(title: "Your daily targets", subtitle: "Based on published research — fine-tune these anytime in Settings.") {
             VStack(spacing: 16) {
                 HStack {

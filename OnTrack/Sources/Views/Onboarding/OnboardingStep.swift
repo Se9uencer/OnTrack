@@ -6,6 +6,9 @@ import SwiftUI
 struct OnboardingStep: Identifiable {
     let id: String
     var showsProgress: Bool = true
+    /// Shows a "Skip" control that jumps straight to the last step in the array,
+    /// for optional screens (the core-loop demos) that shouldn't block finishing.
+    var isSkippable: Bool = false
     var isValid: (OnboardingDraft) -> Bool = { _ in true }
     var ctaTitle: (OnboardingDraft) -> String = { _ in "Continue" }
     let content: (OnboardingDraft) -> AnyView
@@ -13,12 +16,14 @@ struct OnboardingStep: Identifiable {
     init<V: View>(
         id: String,
         showsProgress: Bool = true,
+        isSkippable: Bool = false,
         isValid: @escaping (OnboardingDraft) -> Bool = { _ in true },
         ctaTitle: @escaping (OnboardingDraft) -> String = { _ in "Continue" },
         @ViewBuilder content: @escaping (OnboardingDraft) -> V
     ) {
         self.id = id
         self.showsProgress = showsProgress
+        self.isSkippable = isSkippable
         self.isValid = isValid
         self.ctaTitle = ctaTitle
         self.content = { AnyView(content($0)) }
@@ -26,8 +31,9 @@ struct OnboardingStep: Identifiable {
 }
 
 enum OnboardingSteps {
-    /// The short, mandatory-profile first-run flow: one question per screen, ending
-    /// with the targets reveal. The three interactive core-loop demos land after this.
+    /// The short, mandatory-profile first-run flow: one question per screen, a
+    /// targets reveal, three skippable interactive demos of the core loop, and a
+    /// closing screen that commits the profile.
     static func firstRun() -> [OnboardingStep] {
         [
             OnboardingStep(id: "welcome", showsProgress: false, ctaTitle: { _ in "Get Started" }) { _ in
@@ -51,8 +57,20 @@ enum OnboardingSteps {
             OnboardingStep(id: "goal") { draft in
                 GoalStep(draft: draft)
             },
-            OnboardingStep(id: "targets", showsProgress: false, ctaTitle: { _ in "Get Started" }) { draft in
+            OnboardingStep(id: "targets") { draft in
                 TargetsStep(draft: draft)
+            },
+            OnboardingStep(id: "demo-meal", isSkippable: true) { draft in
+                LogMealDemoStep(draft: draft)
+            },
+            OnboardingStep(id: "demo-workout", isSkippable: true) { _ in
+                StartWorkoutDemoStep()
+            },
+            OnboardingStep(id: "demo-weight", isSkippable: true) { _ in
+                LogWeightDemoStep()
+            },
+            OnboardingStep(id: "done", showsProgress: false, ctaTitle: { _ in "Let's go" }) { _ in
+                DoneStep()
             },
         ]
     }

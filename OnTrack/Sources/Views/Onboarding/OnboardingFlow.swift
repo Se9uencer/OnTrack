@@ -25,10 +25,17 @@ struct OnboardingFlow: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            if step.showsProgress {
-                progressBar
-                    .padding(.horizontal, 20)
-                    .padding(.top, 12)
+            if step.showsProgress || step.isSkippable {
+                HStack(spacing: 12) {
+                    if step.showsProgress { progressBar }
+                    if step.isSkippable {
+                        Button("Skip") { skipToEnd() }
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 12)
             }
             ZStack {
                 step.content(draft)
@@ -87,6 +94,11 @@ struct OnboardingFlow: View {
     private func goBack() {
         guard !isFirst else { return }
         index -= 1
+        draft.stepIndex = index
+    }
+
+    private func skipToEnd() {
+        index = steps.count - 1
         draft.stepIndex = index
     }
 }

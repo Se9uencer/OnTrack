@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import SwiftData
 
 /// In-progress onboarding answers, persisted to UserDefaults as the user goes so a
 /// force-quit mid-flow resumes at the same step instead of restarting from Welcome.
@@ -51,5 +52,20 @@ final class OnboardingDraft {
     func weightKg(metric: Bool) -> Double? {
         guard let w = Double(weightText) else { return nil }
         return Units.displayToKg(w, metric: metric)
+    }
+
+    /// The calorie/macro targets these answers would produce — shared by the targets
+    /// reveal and the "log a meal" demo so both show numbers computed the same way.
+    func previewTargets(metric: Bool) -> (cals: Double, protein: Double, carbs: Double, fat: Double) {
+        let p = UserProfile()
+        p.age = age
+        p.sex = sex
+        p.heightCm = heightCm(metric: metric) ?? 175
+        p.activityLevel = activityLevel
+        p.weeklyRateLbs = weeklyRateLbs
+        let weightKg = weightKg(metric: metric) ?? 70
+        let cals = Calculations.calorieTarget(profile: p, weightKg: weightKg)
+        let m = Calculations.macroTargets(profile: p, weightKg: weightKg)
+        return (cals, m.protein, m.carbs, m.fat)
     }
 }

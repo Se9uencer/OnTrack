@@ -15,16 +15,27 @@ final class OnboardingFlowTests: XCTestCase {
 
     func testFirstRunStepOrderAndCount() {
         let ids = OnboardingSteps.firstRun().map(\.id)
-        XCTAssertEqual(ids, ["welcome", "sex", "age", "height", "weight", "activity", "goal", "targets"])
+        XCTAssertEqual(ids, [
+            "welcome", "sex", "age", "height", "weight", "activity", "goal",
+            "targets", "demo-meal", "demo-workout", "demo-weight", "done",
+        ])
     }
 
-    func testWelcomeAndTargetsHideProgressBarOthersShowIt() {
+    func testOnlyWelcomeAndDoneHideProgressBar() {
         let steps = OnboardingSteps.firstRun()
         let progressFlags = Dictionary(uniqueKeysWithValues: steps.map { ($0.id, $0.showsProgress) })
         XCTAssertEqual(progressFlags["welcome"], false)
-        XCTAssertEqual(progressFlags["targets"], false)
-        XCTAssertEqual(progressFlags["sex"], true)
-        XCTAssertEqual(progressFlags["height"], true)
+        XCTAssertEqual(progressFlags["done"], false)
+        for id in ["sex", "age", "height", "weight", "activity", "goal", "targets",
+                   "demo-meal", "demo-workout", "demo-weight"] {
+            XCTAssertEqual(progressFlags[id], true, "\(id) should show the progress bar")
+        }
+    }
+
+    func testOnlyTheThreeCoreLoopDemosAreSkippable() {
+        let steps = OnboardingSteps.firstRun()
+        let skippable = Set(steps.filter(\.isSkippable).map(\.id))
+        XCTAssertEqual(skippable, ["demo-meal", "demo-workout", "demo-weight"])
     }
 
     // MARK: Gating — height/weight are the only hard gates in the flow
@@ -54,7 +65,8 @@ final class OnboardingFlowTests: XCTestCase {
     func testProfileStepsWithDefaultsAreAlwaysValid() {
         let draft = OnboardingDraft()
         let steps = OnboardingSteps.firstRun()
-        for id in ["welcome", "sex", "age", "activity", "goal", "targets"] {
+        for id in ["welcome", "sex", "age", "activity", "goal", "targets",
+                   "demo-meal", "demo-workout", "demo-weight", "done"] {
             let step = steps.first { $0.id == id }!
             XCTAssertTrue(step.isValid(draft), "\(id) should be valid with default draft values")
         }
@@ -141,5 +153,31 @@ final class OnboardingFlowTests: XCTestCase {
         XCTAssertEqual(macros.protein, 1.8 * weightKg, accuracy: 0.01)
         XCTAssertEqual(cals, Calculations.tdee(profile: profile, weightKg: weightKg), accuracy: 0.01,
                        "Maintain (rate 0) should equal TDEE exactly")
+    }
+
+    func testPreviewTargetsMatchesCalculationsDirectly() {
+        // Both TargetsStep and the "log a meal" demo read draft.previewTargets — it
+        // must agree with calling Calculations directly on the same profile.
+        let draft = OnboardingDraft()
+        draft.heightText = "70"
+        draft.weightText = "180"
+        draft.activityLevel = "active"
+        draft.weeklyRateLbs = -0.5
+
+        let profile = UserProfile()
+        profile.age = draft.age
+        profile.sex = draft.sex
+        profile.heightCm = draft.heightCm(metric: false)!
+        profile.activityLevel = draft.activityLevel
+        profile.weeklyRateLbs = draft.weeklyRateLbs
+        let weightKg = draft.weightKg(metric: false)!
+        let expectedCals = Calculations.calorieTarget(profile: profile, weightKg: weightKg)
+        let expectedMacros = Calculations.macroTargets(profile: profile, weightKg: weightKg)
+
+        let preview = draft.previewTargets(metric: false)
+        XCTAssertEqual(preview.cals, expectedCals, accuracy: 0.01)
+        XCTAssertEqual(preview.protein, expectedMacros.protein, accuracy: 0.01)
+        XCTAssertEqual(preview.carbs, expectedMacros.carbs, accuracy: 0.01)
+        XCTAssertEqual(preview.fat, expectedMacros.fat, accuracy: 0.01)
     }
 }
