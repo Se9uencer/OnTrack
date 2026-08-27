@@ -2,20 +2,28 @@ import SwiftUI
 import Charts
 
 /// Interactive, skippable: tapping "Log today's weigh-in" drops one more point onto
-/// an illustrative trend line. Fires no system prompt — HealthKit is primed on the
-/// real Weight tab, not here.
+/// a trend line. Fires no system prompt — HealthKit is primed on the real Weight tab,
+/// not here. The trend itself is illustrative, but "today's" logged point is exactly
+/// what the user typed on the Weight step — not a hardcoded sample weight.
 struct LogWeightDemoStep: View {
+    let draft: OnboardingDraft
     @AppStorage("useMetric") private var useMetric = false
     @State private var logged = false
 
-    // Illustrative sample trend, not the user's real data.
-    private let historyKg: [(day: Int, kg: Double)] = [
-        (0, 82.5), (1, 82.3), (2, 82.4), (3, 82.0), (4, 81.8), (5, 81.9),
-    ]
-    private let newPointKg = 81.5
+    private var currentWeightKg: Double { draft.weightKg(metric: useMetric) ?? 70 }
+
+    // A gentle illustrative wiggle leading up to (but not landing on) the user's
+    // actual weight, so "today's" real entry reads as a natural next point rather
+    // than an unrelated jump.
+    private var historyKg: [(day: Int, kg: Double)] {
+        let base = currentWeightKg
+        return [1.0, 0.7, 0.9, 0.4, 0.6, 0.2].enumerated().map { day, delta in
+            (day: day, kg: base + delta)
+        }
+    }
 
     private var points: [(day: Int, kg: Double)] {
-        logged ? historyKg + [(day: 6, kg: newPointKg)] : historyKg
+        logged ? historyKg + [(day: 6, kg: currentWeightKg)] : historyKg
     }
 
     private func displayWeight(_ kg: Double) -> String {
@@ -57,7 +65,7 @@ struct LogWeightDemoStep: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(logged ? "Logged for today" : "Log today's weigh-in")
                                 .font(.subheadline.bold())
-                            Text(logged ? displayWeight(newPointKg) : "Tap to add a sample entry")
+                            Text(logged ? displayWeight(currentWeightKg) : "Tap to add today's entry")
                                 .font(.caption).foregroundStyle(.secondary)
                         }
                         Spacer()
