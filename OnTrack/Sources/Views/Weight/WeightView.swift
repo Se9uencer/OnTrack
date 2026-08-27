@@ -8,9 +8,11 @@ struct WeightView: View {
     @Environment(\.scenePhase) private var scenePhase
     @Query(sort: \BodyWeightEntry.date, order: .reverse) private var entries: [BodyWeightEntry]
     @AppStorage("useMetric") private var useMetric = false
+    @AppStorage("hasPrimedHealthKit") private var hasPrimedHealthKit = false
     @State private var showingLog = false
     @State private var showGallery = false
     @State private var galleryStart: BodyWeightEntry?
+    @State private var showingHealthKitPrime = false
 
     var body: some View {
         NavigationStack {
@@ -51,7 +53,24 @@ struct WeightView: View {
             .sheet(isPresented: $showingLog) {
                 LogWeightSheet()
             }
+            .sheet(isPresented: $showingHealthKitPrime) {
+                PermissionPrimeSheet(
+                    icon: "heart.fill",
+                    navTitle: "Apple Health",
+                    title: "Sync with Apple Health?",
+                    message: "OnTrack can pull in weigh-ins you log with a smart scale or other apps, and save the ones you log here back to Health."
+                ) {
+                    Task {
+                        try? await HealthKitService.shared.requestAuthorization()
+                        await HealthKitService.shared.importExternalWeights(context: context)
+                    }
+                }
+            }
             .task {
+                if !hasPrimedHealthKit {
+                    hasPrimedHealthKit = true
+                    showingHealthKitPrime = true
+                }
                 await HealthKitService.shared.importExternalWeights(context: context)
             }
             .onChange(of: scenePhase) { _, phase in

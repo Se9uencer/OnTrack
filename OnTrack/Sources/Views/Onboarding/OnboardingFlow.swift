@@ -113,11 +113,6 @@ struct OnboardingRootView: View {
         profile.weeklyRateLbs = draft.weeklyRateLbs
         context.insert(profile)
         context.insert(BodyWeightEntry(weightKg: w))
-        Task {
-            try? await HealthKitService.shared.requestAuthorization()
-            try? await HealthKitService.shared.saveWeight(w, date: Date())
-            _ = await NotificationService.shared.requestPermission()
-        }
         OnboardingDraft.clearPersisted()
         hasOnboarded = true
     }
