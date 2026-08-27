@@ -11,6 +11,8 @@ struct SettingsView: View {
     @AppStorage("aiConsentGiven") private var aiConsentGiven = false
     @AppStorage("isPro") private var isProDebug = true
     @State private var showingTour = false
+    @AppStorage("tourVersionSeen") private var tourVersionSeen = 0
+    @AppStorage("tourResumeIndex") private var tourResumeIndex = -1
 
     var body: some View {
         NavigationStack {
@@ -32,6 +34,7 @@ struct SettingsView: View {
                 }
                 Section {
                     Button {
+                        tourVersionSeen = TourSlides.currentVersion
                         showingTour = true
                     } label: {
                         Label("Take the tour", systemImage: "sparkles")
@@ -60,7 +63,7 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .keyboardDoneButton()
             .fullScreenCover(isPresented: $showingTour) {
-                TourView()
+                TourView(startAt: max(tourResumeIndex, 0))
             }
         }
     }
