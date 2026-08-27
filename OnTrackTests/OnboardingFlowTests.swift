@@ -227,4 +227,14 @@ final class OnboardingFlowTests: XCTestCase {
             XCTAssertTrue(step.isValid(draft), "\(step.id) should never block Continue")
         }
     }
+
+    /// "Try it" leaves the tour rather than returning to it, so tapping it stores a
+    /// resume marker — the next slide, or -1 once there's nothing left to resume.
+    func testResumeIndexPointsToNextSlideExceptOnTheLast() {
+        let count = TourSlides.all().count
+        XCTAssertEqual(TourSlides.resumeIndex(afterTryItOn: 0, of: count), 1)
+        XCTAssertEqual(TourSlides.resumeIndex(afterTryItOn: count - 2, of: count), count - 1)
+        XCTAssertEqual(TourSlides.resumeIndex(afterTryItOn: count - 1, of: count), -1,
+                       "Try It on the last slide has nothing left to resume")
+    }
 }

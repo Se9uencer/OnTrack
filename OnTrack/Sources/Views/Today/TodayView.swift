@@ -22,6 +22,7 @@ struct TodayView: View {
     @State private var showSources = false
     @State private var showingTour = false
     @AppStorage("tourVersionSeen") private var tourVersionSeen = 0
+    @AppStorage("tourResumeIndex") private var tourResumeIndex = -1
     @StateObject private var router = TabRouter.shared
 
     var body: some View {
@@ -35,7 +36,11 @@ struct TodayView: View {
                     workoutCard
                     if !faithTradition.isEmpty { faithCard }
                     insightCard
-                    if tourVersionSeen < TourSlides.currentVersion { tourCard }
+                    if tourResumeIndex >= 0 {
+                        continueTourCard
+                    } else if tourVersionSeen < TourSlides.currentVersion {
+                        tourCard
+                    }
                 }
                 .padding()
             }
@@ -62,10 +67,15 @@ struct TodayView: View {
                 ProPaywallView { generateInsight() }
             }
             .fullScreenCover(isPresented: $showingTour) {
-                TourView()
+                TourView(startAt: max(tourResumeIndex, 0))
             }
             .onAppear { handleDeepLink(router.pendingDeepLink) }
             .onChange(of: router.pendingDeepLink) { _, link in handleDeepLink(link) }
+            .onChange(of: router.pendingTourOpen) { _, isPending in
+                guard isPending else { return }
+                router.pendingTourOpen = false
+                showingTour = true
+            }
         }
     }
 
@@ -105,6 +115,40 @@ struct TodayView: View {
         .overlay(alignment: .topTrailing) {
             Button {
                 tourVersionSeen = TourSlides.currentVersion
+            } label: {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(10)
+        }
+    }
+
+    private var continueTourCard: some View {
+        Button {
+            showingTour = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "arrow.uturn.forward.circle.fill")
+                    .font(.title2)
+                    .foregroundStyle(Color.accentColor)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Continue the tour")
+                        .font(.subheadline.bold())
+                    Text("Pick up right where you left off.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+                Spacer()
+                Image(systemName: "chevron.right").foregroundStyle(.tertiary)
+            }
+            .padding()
+            .frame(maxWidth: .infinity)
+            .card()
+        }
+        .buttonStyle(.plain)
+        .overlay(alignment: .topTrailing) {
+            Button {
+                tourResumeIndex = -1
             } label: {
                 Image(systemName: "xmark.circle.fill")
                     .font(.caption)
