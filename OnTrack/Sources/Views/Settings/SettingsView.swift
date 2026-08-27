@@ -10,6 +10,7 @@ struct SettingsView: View {
     @AppStorage("useMetric") private var useMetric = false
     @AppStorage("aiConsentGiven") private var aiConsentGiven = false
     @AppStorage("isPro") private var isProDebug = true
+    @State private var showingTour = false
 
     var body: some View {
         NavigationStack {
@@ -27,6 +28,13 @@ struct SettingsView: View {
                 Section("Health") {
                     Button("Re-request HealthKit access") {
                         Task { try? await HealthKitService.shared.requestAuthorization() }
+                    }
+                }
+                Section {
+                    Button {
+                        showingTour = true
+                    } label: {
+                        Label("Take the tour", systemImage: "sparkles")
                     }
                 }
                 Section {
@@ -51,6 +59,9 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
             .keyboardDoneButton()
+            .fullScreenCover(isPresented: $showingTour) {
+                TourView()
+            }
         }
     }
 

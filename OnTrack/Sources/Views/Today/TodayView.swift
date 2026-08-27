@@ -20,6 +20,8 @@ struct TodayView: View {
     @State private var showPaywall = false
     @State private var showSettings = false
     @State private var showSources = false
+    @State private var showingTour = false
+    @AppStorage("tourVersionSeen") private var tourVersionSeen = 0
     @StateObject private var router = TabRouter.shared
 
     var body: some View {
@@ -33,6 +35,7 @@ struct TodayView: View {
                     workoutCard
                     if !faithTradition.isEmpty { faithCard }
                     insightCard
+                    if tourVersionSeen < TourSlides.currentVersion { tourCard }
                 }
                 .padding()
             }
@@ -58,6 +61,56 @@ struct TodayView: View {
             .sheet(isPresented: $showPaywall) {
                 ProPaywallView { generateInsight() }
             }
+            .fullScreenCover(isPresented: $showingTour) {
+                TourView()
+            }
+            .onAppear { handleDeepLink(router.pendingDeepLink) }
+            .onChange(of: router.pendingDeepLink) { _, link in handleDeepLink(link) }
+        }
+    }
+
+    /// Consumes the "open Settings" tour deep link. Clears the intent immediately so
+    /// it never re-fires on a later, unrelated visit to this tab.
+    private func handleDeepLink(_ link: TourDeepLink?) {
+        guard link == .settings else { return }
+        router.pendingDeepLink = nil
+        showSettings = true
+    }
+
+    // MARK: Feature tour
+
+    private var tourCard: some View {
+        Button {
+            tourVersionSeen = TourSlides.currentVersion
+            showingTour = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "sparkles")
+                    .font(.title2)
+                    .foregroundStyle(Color.accentColor)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("New here?")
+                        .font(.subheadline.bold())
+                    Text("Take a quick tour of what OnTrack can do.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+                Spacer()
+                Image(systemName: "chevron.right").foregroundStyle(.tertiary)
+            }
+            .padding()
+            .frame(maxWidth: .infinity)
+            .card()
+        }
+        .buttonStyle(.plain)
+        .overlay(alignment: .topTrailing) {
+            Button {
+                tourVersionSeen = TourSlides.currentVersion
+            } label: {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(10)
         }
     }
 
@@ -350,50 +403,6 @@ struct TodayView: View {
 }
 
 // MARK: - Dashboard components
-
-/// A circular progress ring with centered content.
-private struct ProgressRing<Content: View>: View {
-    let fraction: Double
-    let color: Color
-    var lineWidth: CGFloat = 8
-    @ViewBuilder let content: Content
-
-    var body: some View {
-        ZStack {
-            Circle().stroke(Color(.systemGray4).opacity(0.5), lineWidth: lineWidth)
-            Circle()
-                .trim(from: 0, to: max(0.0001, fraction))
-                .stroke(color, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
-                .rotationEffect(.degrees(-90))
-            content
-        }
-    }
-}
-
-/// One macro card: grams-left number, label, and a ring with an icon.
-private struct MacroRingCard: View {
-    let title: String
-    let left: Double
-    let fraction: Double
-    let icon: String
-    let color: Color
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("\(Int(max(0, left)))g").font(.title3.bold())
-            Text(title).font(.caption).foregroundStyle(.secondary)
-            ProgressRing(fraction: fraction, color: color, lineWidth: 6) {
-                Image(systemName: icon).font(.subheadline).foregroundStyle(color)
-            }
-            .frame(width: 52, height: 52)
-            .frame(maxWidth: .infinity)
-            .padding(.top, 2)
-        }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .card()
-    }
-}
 
 /// One logged-food row for the "Recently eaten" list.
 private struct RecentlyEatenRow: View {

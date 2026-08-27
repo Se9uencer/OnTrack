@@ -7,9 +7,11 @@ struct ActiveSessionView: View {
     @Environment(\.dismiss) private var dismiss
     @AppStorage("useMetric") private var useMetric = false
     @AppStorage("restSeconds") private var restSeconds = 120
+    @AppStorage("hasPrimedNotifications") private var hasPrimedNotifications = false
     @State private var restEndsAt: Date?
     @State private var showingPicker = false
     @State private var confirmingDiscard = false
+    @State private var showingNotificationPrime = false
     @State private var now = Date()
     @State private var currentPage = 0
 
@@ -52,6 +54,16 @@ struct ActiveSessionView: View {
             ExercisePickerView { id, name in
                 addSet(exerciseID: id, exerciseName: name)
                 currentPage = max(0, groupedExercises.count - 1)
+            }
+        }
+        .sheet(isPresented: $showingNotificationPrime) {
+            PermissionPrimeSheet(
+                icon: "bell.badge.fill",
+                navTitle: "Notifications",
+                title: "Get notified when rest is over?",
+                message: "OnTrack can send a notification when your rest timer finishes, so you don't have to watch the clock."
+            ) {
+                Task { _ = await NotificationService.shared.requestPermission() }
             }
         }
         .confirmationDialog("Discard this workout?", isPresented: $confirmingDiscard, titleVisibility: .visible) {
@@ -207,6 +219,10 @@ struct ActiveSessionView: View {
     private func startRest() {
         restEndsAt = Date().addingTimeInterval(TimeInterval(restSeconds))
         NotificationService.shared.scheduleRestDone(seconds: TimeInterval(restSeconds))
+        if !hasPrimedNotifications {
+            hasPrimedNotifications = true
+            showingNotificationPrime = true
+        }
     }
 
     private func stopRest() {

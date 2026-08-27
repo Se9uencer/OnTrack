@@ -2,8 +2,16 @@ import SwiftUI
 import SwiftData
 
 struct FoodSearchView: View {
+    /// A screen to jump straight into on appear — how the feature tour's "Try it"
+    /// reaches past this view's own sheet into the scanner or photo capture.
+    enum InitialAction {
+        case scanner
+        case photoMeal
+    }
+
     let meal: String
     let day: Date
+    var initialAction: InitialAction? = nil
     var onLogged: () -> Void = {}
 
     @Environment(\.modelContext) private var context
@@ -165,6 +173,13 @@ struct FoodSearchView: View {
             }
             .searchable(text: $query, prompt: "Search foods")
             .onChange(of: query) { hasSearchedOnline = false; onlineResults = []; onlineSearchFailed = false }
+            .task {
+                switch initialAction {
+                case .scanner: showingScanner = true
+                case .photoMeal: showingPhotoMeal = true
+                case nil: break
+                }
+            }
             .navigationTitle("Add to \(meal.capitalized)")
             .keyboardDoneButton()
             .toolbar {

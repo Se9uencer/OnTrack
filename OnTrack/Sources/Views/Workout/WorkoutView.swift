@@ -8,6 +8,8 @@ struct WorkoutView: View {
     @State private var selectedDay = Calendar.current.startOfDay(for: Date())
     @State private var activeSession: WorkoutSession?
     @State private var showingStartChooser = false
+    @State private var showingWorkoutsList = false
+    @StateObject private var router = TabRouter.shared
 
     private var cal: Calendar { Calendar.current }
 
@@ -40,6 +42,11 @@ struct WorkoutView: View {
             .fullScreenCover(item: $activeSession) { session in
                 ActiveSessionView(session: session)
             }
+            .navigationDestination(isPresented: $showingWorkoutsList) {
+                WorkoutsListView()
+            }
+            .onAppear { handleDeepLink(router.pendingDeepLink) }
+            .onChange(of: router.pendingDeepLink) { _, link in handleDeepLink(link) }
         }
     }
 
@@ -91,8 +98,8 @@ struct WorkoutView: View {
                     .foregroundStyle(.secondary)
             }
             Spacer()
-            NavigationLink {
-                WorkoutsListView()
+            Button {
+                showingWorkoutsList = true
             } label: {
                 Text("Workouts")
                     .font(.headline)
@@ -102,6 +109,14 @@ struct WorkoutView: View {
                     .foregroundStyle(.primary)
             }
         }
+    }
+
+    /// Consumes a workout-related tour deep link. Clears the intent immediately so it
+    /// never re-fires on a later, unrelated visit to this tab.
+    private func handleDeepLink(_ link: TourDeepLink?) {
+        guard link == .workoutsList else { return }
+        router.pendingDeepLink = nil
+        showingWorkoutsList = true
     }
 
     // MARK: Day card — the selected day's sessions, or the empty "+" state
