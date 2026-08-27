@@ -34,7 +34,7 @@ struct OnTrackApp: App {
                 if hasOnboarded {
                     RootTabView()
                 } else {
-                    OnboardingView()
+                    OnboardingRootView()
                 }
             }
             .preferredColorScheme(.dark)
