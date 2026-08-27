@@ -109,6 +109,25 @@ final class OnboardingFlowTests: XCTestCase {
         XCTAssertEqual(fresh.stepIndex, 0)
     }
 
+    /// The replayable tour hands OnboardingFlow a throwaway OnboardingDraft purely to
+    /// satisfy the content-closure signature. It must never read or write the real
+    /// onboarding draft's UserDefaults keys — otherwise taking the tour would corrupt
+    /// whatever step a real, in-progress onboarding had saved.
+    func testEphemeralDraftNeverTouchesUserDefaults() {
+        OnboardingDraft.clearPersisted()
+        let ephemeral = OnboardingDraft(persists: false)
+        ephemeral.sex = "female"
+        ephemeral.age = 99
+        ephemeral.heightText = "999"
+        ephemeral.stepIndex = 11
+
+        let real = OnboardingDraft()
+        XCTAssertEqual(real.sex, "male")
+        XCTAssertEqual(real.age, 25)
+        XCTAssertEqual(real.heightText, "")
+        XCTAssertEqual(real.stepIndex, 0)
+    }
+
     // MARK: Unit conversion feeding the targets reveal
 
     func testHeightCmConvertsImperialAndPassesThroughMetric() {
@@ -179,5 +198,33 @@ final class OnboardingFlowTests: XCTestCase {
         XCTAssertEqual(preview.protein, expectedMacros.protein, accuracy: 0.01)
         XCTAssertEqual(preview.carbs, expectedMacros.carbs, accuracy: 0.01)
         XCTAssertEqual(preview.fat, expectedMacros.fat, accuracy: 0.01)
+    }
+
+    // MARK: The replayable full tour
+
+    func testFullTourHasTenUniquelyIdentifiedSlides() {
+        let steps = TourSlides.all()
+        XCTAssertEqual(steps.count, 10)
+        XCTAssertEqual(Set(steps.map(\.id)).count, 10, "every tour slide id must be unique")
+    }
+
+    func testOnlyTheLastTourSlideFinishesRatherThanContinuing() {
+        let steps = TourSlides.all()
+        let draft = OnboardingDraft(persists: false)
+        XCTAssertEqual(steps.last?.ctaTitle(draft), "Done")
+        for step in steps.dropLast() {
+            XCTAssertEqual(step.ctaTitle(draft), "Continue", "\(step.id) should say Continue, not finish the tour")
+        }
+    }
+
+    func testNoTourSlideIsSkippableOrGated() {
+        // The tour has its own Close button instead of onboarding's skip-to-end, and
+        // nothing in it blocks moving to the next slide.
+        let steps = TourSlides.all()
+        let draft = OnboardingDraft(persists: false)
+        for step in steps {
+            XCTAssertFalse(step.isSkippable, "\(step.id) should not show a Skip control")
+            XCTAssertTrue(step.isValid(draft), "\(step.id) should never block Continue")
+        }
     }
 }

@@ -17,15 +17,31 @@ final class OnboardingDraft {
         static let stepIndex = "onboardingDraft.stepIndex"
     }
 
-    var sex: String { didSet { UserDefaults.standard.set(sex, forKey: Key.sex) } }
-    var age: Int { didSet { UserDefaults.standard.set(age, forKey: Key.age) } }
-    var heightText: String { didSet { UserDefaults.standard.set(heightText, forKey: Key.heightText) } }
-    var weightText: String { didSet { UserDefaults.standard.set(weightText, forKey: Key.weightText) } }
-    var activityLevel: String { didSet { UserDefaults.standard.set(activityLevel, forKey: Key.activityLevel) } }
-    var weeklyRateLbs: Double { didSet { UserDefaults.standard.set(weeklyRateLbs, forKey: Key.weeklyRateLbs) } }
-    var stepIndex: Int { didSet { UserDefaults.standard.set(stepIndex, forKey: Key.stepIndex) } }
+    /// False for a throwaway instance — the replayable tour reuses this type purely to
+    /// satisfy OnboardingStep's content-closure signature (tour slides ignore it) and
+    /// must never read or write the real onboarding draft's UserDefaults keys.
+    private let persists: Bool
 
-    init() {
+    var sex: String { didSet { if persists { UserDefaults.standard.set(sex, forKey: Key.sex) } } }
+    var age: Int { didSet { if persists { UserDefaults.standard.set(age, forKey: Key.age) } } }
+    var heightText: String { didSet { if persists { UserDefaults.standard.set(heightText, forKey: Key.heightText) } } }
+    var weightText: String { didSet { if persists { UserDefaults.standard.set(weightText, forKey: Key.weightText) } } }
+    var activityLevel: String { didSet { if persists { UserDefaults.standard.set(activityLevel, forKey: Key.activityLevel) } } }
+    var weeklyRateLbs: Double { didSet { if persists { UserDefaults.standard.set(weeklyRateLbs, forKey: Key.weeklyRateLbs) } } }
+    var stepIndex: Int { didSet { if persists { UserDefaults.standard.set(stepIndex, forKey: Key.stepIndex) } } }
+
+    init(persists: Bool = true) {
+        self.persists = persists
+        guard persists else {
+            sex = "male"
+            age = 25
+            heightText = ""
+            weightText = ""
+            activityLevel = "moderate"
+            weeklyRateLbs = 0
+            stepIndex = 0
+            return
+        }
         let d = UserDefaults.standard
         sex = d.string(forKey: Key.sex) ?? "male"
         age = d.object(forKey: Key.age) != nil ? d.integer(forKey: Key.age) : 25

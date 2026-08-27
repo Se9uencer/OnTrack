@@ -13,6 +13,7 @@ struct WeightView: View {
     @State private var showGallery = false
     @State private var galleryStart: BodyWeightEntry?
     @State private var showingHealthKitPrime = false
+    @StateObject private var router = TabRouter.shared
 
     var body: some View {
         NavigationStack {
@@ -67,7 +68,10 @@ struct WeightView: View {
                 }
             }
             .task {
-                if !hasPrimedHealthKit {
+                // Skip priming on the same appearance a tour deep link is about to push
+                // the gallery — presenting a sheet and a push at once is asking for
+                // trouble. It'll prime normally on the next ordinary Weight tab visit.
+                if router.pendingDeepLink != .weightGallery, !hasPrimedHealthKit {
                     hasPrimedHealthKit = true
                     showingHealthKitPrime = true
                 }
@@ -78,7 +82,18 @@ struct WeightView: View {
                     Task { await HealthKitService.shared.importExternalWeights(context: context) }
                 }
             }
+            .onAppear { handleDeepLink(router.pendingDeepLink) }
+            .onChange(of: router.pendingDeepLink) { _, link in handleDeepLink(link) }
         }
+    }
+
+    /// Consumes a weight-related tour deep link. Clears the intent immediately so it
+    /// never re-fires on a later, unrelated visit to this tab.
+    private func handleDeepLink(_ link: TourDeepLink?) {
+        guard link == .weightGallery else { return }
+        router.pendingDeepLink = nil
+        galleryStart = nil
+        showGallery = true
     }
 
     private func historyRow(_ entry: BodyWeightEntry) -> some View {

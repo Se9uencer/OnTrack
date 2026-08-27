@@ -49,11 +49,31 @@ enum AppTab: Hashable {
     case today, diet, workout, weight, faith
 }
 
+/// A one-shot intent for the destination tab to act on and clear — how the feature
+/// tour's "Try it" buttons reach past a tab switch into a specific sheet or screen.
+enum TourDeepLink: Equatable {
+    case dietSearch
+    case dietScanner
+    case dietPhotoMeal
+    case workoutsList
+    case weightGallery
+    case settings
+}
+
 final class TabRouter: ObservableObject {
     static let shared = TabRouter()
     @Published var selected: AppTab = .today
     /// Set to true to push the Coach screen onto the Today tab's stack.
     @Published var presentCoach = false
+    @Published var pendingDeepLink: TourDeepLink?
+
+    /// Switches to `tab` and queues `deepLink` for that tab's view to consume once
+    /// on appear. Used by the feature tour; destination views clear it after acting
+    /// on it so it never re-fires on a later, unrelated visit to that tab.
+    func navigate(to tab: AppTab, deepLink: TourDeepLink? = nil) {
+        selected = tab
+        pendingDeepLink = deepLink
+    }
 }
 
 struct RootTabView: View {

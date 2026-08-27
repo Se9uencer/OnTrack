@@ -10,6 +10,8 @@ struct DietView: View {
     @State private var day = Calendar.current.startOfDay(for: Date())
     @State private var addingToMeal: String?
     @State private var pendingDeletion: [DiaryEntry] = []
+    @State private var foodSearchInitialAction: FoodSearchView.InitialAction?
+    @StateObject private var router = TabRouter.shared
 
     private let meals = ["breakfast", "lunch", "dinner", "snack"]
 
@@ -31,8 +33,9 @@ struct DietView: View {
             // day is @State (set once at init); without this it stays pinned to the
             // day the view was created and drifts from the live "today" the dashboard
             // shows once the clock crosses midnight.
-            .onAppear { snapToToday() }
+            .onAppear { snapToToday(); handleDeepLink(router.pendingDeepLink) }
             .onChange(of: scenePhase) { _, phase in if phase == .active { snapToToday() } }
+            .onChange(of: router.pendingDeepLink) { _, link in handleDeepLink(link) }
             .confirmationDialog(
                 "Delete this food?",
                 isPresented: Binding(get: { !pendingDeletion.isEmpty }, set: { if !$0 { pendingDeletion = [] } }),
@@ -43,9 +46,9 @@ struct DietView: View {
             }
             .sheet(item: Binding(
                 get: { addingToMeal.map { MealTarget(meal: $0) } },
-                set: { addingToMeal = $0?.meal })
+                set: { addingToMeal = $0?.meal; if $0 == nil { foodSearchInitialAction = nil } })
             ) { target in
-                FoodSearchView(meal: target.meal, day: day) {}
+                FoodSearchView(meal: target.meal, day: day, initialAction: foodSearchInitialAction) {}
             }
         }
     }
@@ -93,6 +96,34 @@ struct DietView: View {
     private func snapToToday() {
         let today = Calendar.current.startOfDay(for: Date())
         if day != today { day = today }
+    }
+
+    /// Consumes a diet-related tour deep link — opens the food search sheet, optionally
+    /// straight into the scanner or photo capture. Clears the intent immediately so it
+    /// never re-fires on a later, unrelated visit to this tab.
+    private func handleDeepLink(_ link: TourDeepLink?) {
+        switch link {
+        case .dietSearch, .dietScanner, .dietPhotoMeal:
+            break
+        case .workoutsList, .weightGallery, .settings, nil:
+            return
+        }
+        router.pendingDeepLink = nil
+        switch link {
+        case .dietScanner: foodSearchInitialAction = .scanner
+        case .dietPhotoMeal: foodSearchInitialAction = .photoMeal
+        default: foodSearchInitialAction = nil
+        }
+        addingToMeal = defaultMealForNow()
+    }
+
+    private func defaultMealForNow() -> String {
+        switch Calendar.current.component(.hour, from: Date()) {
+        case 5..<11: return "breakfast"
+        case 11..<16: return "lunch"
+        case 16..<21: return "dinner"
+        default: return "snack"
+        }
     }
 
     private var totalsSection: some View {

@@ -109,6 +109,7 @@ struct OnboardingRootView: View {
     @Environment(\.modelContext) private var context
     @AppStorage("hasOnboarded") private var hasOnboarded = false
     @AppStorage("useMetric") private var useMetric = false
+    @AppStorage("tourVersionSeen") private var tourVersionSeen = 0
     @State private var draft = OnboardingDraft()
 
     var body: some View {
@@ -126,6 +127,9 @@ struct OnboardingRootView: View {
         context.insert(profile)
         context.insert(BodyWeightEntry(weightKg: w))
         OnboardingDraft.clearPersisted()
+        // Already walked through the core-loop demos above — don't immediately
+        // re-nag with the "Take the tour" card on their first look at Today.
+        tourVersionSeen = TourSlides.currentVersion
         hasOnboarded = true
     }
 }

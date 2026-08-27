@@ -20,6 +20,8 @@ struct TodayView: View {
     @State private var showPaywall = false
     @State private var showSettings = false
     @State private var showSources = false
+    @State private var showingTour = false
+    @AppStorage("tourVersionSeen") private var tourVersionSeen = 0
     @StateObject private var router = TabRouter.shared
 
     var body: some View {
@@ -33,6 +35,7 @@ struct TodayView: View {
                     workoutCard
                     if !faithTradition.isEmpty { faithCard }
                     insightCard
+                    if tourVersionSeen < TourSlides.currentVersion { tourCard }
                 }
                 .padding()
             }
@@ -58,6 +61,56 @@ struct TodayView: View {
             .sheet(isPresented: $showPaywall) {
                 ProPaywallView { generateInsight() }
             }
+            .fullScreenCover(isPresented: $showingTour) {
+                TourView()
+            }
+            .onAppear { handleDeepLink(router.pendingDeepLink) }
+            .onChange(of: router.pendingDeepLink) { _, link in handleDeepLink(link) }
+        }
+    }
+
+    /// Consumes the "open Settings" tour deep link. Clears the intent immediately so
+    /// it never re-fires on a later, unrelated visit to this tab.
+    private func handleDeepLink(_ link: TourDeepLink?) {
+        guard link == .settings else { return }
+        router.pendingDeepLink = nil
+        showSettings = true
+    }
+
+    // MARK: Feature tour
+
+    private var tourCard: some View {
+        Button {
+            tourVersionSeen = TourSlides.currentVersion
+            showingTour = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "sparkles")
+                    .font(.title2)
+                    .foregroundStyle(Color.accentColor)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("New here?")
+                        .font(.subheadline.bold())
+                    Text("Take a quick tour of what OnTrack can do.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+                Spacer()
+                Image(systemName: "chevron.right").foregroundStyle(.tertiary)
+            }
+            .padding()
+            .frame(maxWidth: .infinity)
+            .card()
+        }
+        .buttonStyle(.plain)
+        .overlay(alignment: .topTrailing) {
+            Button {
+                tourVersionSeen = TourSlides.currentVersion
+            } label: {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(10)
         }
     }
 
