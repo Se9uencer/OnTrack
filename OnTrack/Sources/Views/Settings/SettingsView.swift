@@ -5,14 +5,13 @@ struct SettingsView: View {
     static let privacyPolicyURL = URL(string: "https://se9uencer.github.io/ontrack-privacy/")!
 
     @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) private var dismiss
     @Query private var profiles: [UserProfile]
     @Query(sort: \BodyWeightEntry.date, order: .reverse) private var weights: [BodyWeightEntry]
     @AppStorage("useMetric") private var useMetric = false
     @AppStorage("aiConsentGiven") private var aiConsentGiven = false
     @AppStorage("isPro") private var isProDebug = true
-    @State private var showingTour = false
     @AppStorage("tourVersionSeen") private var tourVersionSeen = 0
-    @AppStorage("tourResumeIndex") private var tourResumeIndex = -1
 
     var body: some View {
         NavigationStack {
@@ -34,8 +33,12 @@ struct SettingsView: View {
                 }
                 Section {
                     Button {
+                        // The tour is always presented from Today, never from here —
+                        // otherwise a slide's "Try it" would only dismiss the tour and
+                        // leave this sheet covering the destination underneath it.
                         tourVersionSeen = TourSlides.currentVersion
-                        showingTour = true
+                        TabRouter.shared.pendingTourOpen = true
+                        dismiss()
                     } label: {
                         Label("Take the tour", systemImage: "sparkles")
                     }
@@ -62,9 +65,6 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
             .keyboardDoneButton()
-            .fullScreenCover(isPresented: $showingTour) {
-                TourView(startAt: max(tourResumeIndex, 0))
-            }
         }
     }
 

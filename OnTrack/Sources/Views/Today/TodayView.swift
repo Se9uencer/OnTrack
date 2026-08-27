@@ -71,6 +71,11 @@ struct TodayView: View {
             }
             .onAppear { handleDeepLink(router.pendingDeepLink) }
             .onChange(of: router.pendingDeepLink) { _, link in handleDeepLink(link) }
+            .onChange(of: router.pendingTourOpen) { _, isPending in
+                guard isPending else { return }
+                router.pendingTourOpen = false
+                showingTour = true
+            }
         }
     }
 

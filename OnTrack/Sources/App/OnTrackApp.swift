@@ -66,6 +66,10 @@ final class TabRouter: ObservableObject {
     /// Set to true to push the Coach screen onto the Today tab's stack.
     @Published var presentCoach = false
     @Published var pendingDeepLink: TourDeepLink?
+    /// Set by Settings' "Take the tour" row. The tour is always presented from Today
+    /// (never from Settings itself) so a slide's "Try it" only ever has to dismiss
+    /// one sheet to reach the destination tab, not the tour-over-Settings stack.
+    @Published var pendingTourOpen = false
 
     /// Switches to `tab` and queues `deepLink` for that tab's view to consume once
     /// on appear. Used by the feature tour; destination views clear it after acting
