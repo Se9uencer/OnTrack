@@ -66,8 +66,8 @@ enum OnboardingSteps {
             OnboardingStep(id: "demo-workout", isSkippable: true) { _ in
                 StartWorkoutDemoStep()
             },
-            OnboardingStep(id: "demo-weight", isSkippable: true) { _ in
-                LogWeightDemoStep()
+            OnboardingStep(id: "demo-weight", isSkippable: true) { draft in
+                LogWeightDemoStep(draft: draft)
             },
             OnboardingStep(id: "done", showsProgress: false, ctaTitle: { _ in "Let's go" }) { _ in
                 DoneStep()
