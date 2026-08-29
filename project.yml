@@ -31,6 +31,8 @@ targets:
       properties:
         UILaunchScreen: {}
         CFBundleDisplayName: OnTrack
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         ITSAppUsesNonExemptEncryption: false
         NSHealthShareUsageDescription: OnTrack reads your body weight to show trends and import weigh-ins logged in other apps.
         NSHealthUpdateUsageDescription: OnTrack saves weights you log to Apple Health.
@@ -43,8 +45,8 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.ibrahimansari.ontrackapp
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.10"
-        CURRENT_PROJECT_VERSION: 5
-        MARKETING_VERSION: 1.2.0
+        CURRENT_PROJECT_VERSION: 6
+        MARKETING_VERSION: 1.3.0
         GENERATE_INFOPLIST_FILE: false
   OnTrackTests:
     type: bundle.unit-test
