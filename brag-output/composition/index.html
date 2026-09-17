@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>OnTrack — Brag</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #1b2a3a;
+      }
+      body {
+        font-family: -apple-system, system-ui, "Helvetica Neue", Arial, sans-serif;
+        color: #1b2a3a;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .scene {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ---------- shared dawn background + sunburst ---------- */
+      .dawn-bg {
+        background: linear-gradient(180deg, #dcedf1 0%, #e7f1f4 55%, #f6e3cd 100%);
+      }
+      .card-bg {
+        background: #f5f1ea;
+      }
+      .sunburst {
+        position: absolute;
+        left: 50%;
+        bottom: -6%;
+        width: 1600px;
+        height: 1600px;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+      .sunburst .glow {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 900px;
+        height: 900px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 246, 227, 0.95) 0%, rgba(232, 174, 134, 0.35) 45%, rgba(232, 174, 134, 0) 72%);
+      }
+      .sunburst .ray {
+        position: absolute;
+        left: calc(50% - 4px);
+        bottom: 40px;
+        width: 8px;
+        height: 760px;
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+        transform-origin: 50% 100%;
+      }
+
+      /* ---------- Scene 1: hook ---------- */
+      #scene-hook .hook-copy {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+      #scene-hook h1 {
+        font-size: 168px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #1b2a3a;
+      }
+      #scene-hook .tagline {
+        margin-top: 28px;
+        font-size: 44px;
+        font-weight: 500;
+        color: #3d5063;
+      }
+
+      /* ---------- Scene 2: identity ---------- */
+      #scene-identity .identity-row {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+      }
+      #scene-identity img {
+        width: 220px;
+        height: 220px;
+        border-radius: 46px;
+        box-shadow: 0 30px 60px rgba(27, 42, 58, 0.18);
+        display: block;
+      }
+      #scene-identity .wordmark {
+        font-size: 108px;
+        font-weight: 800;
+        color: #1b2a3a;
+        letter-spacing: -0.02em;
+      }
+      #scene-identity .chip {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 10px 28px;
+        border-radius: 999px;
+        background: rgba(232, 174, 134, 0.35);
+        color: #7a4a2c;
+        font-size: 34px;
+        font-weight: 600;
+      }
+
+      /* ---------- Feature card shell (scenes 3-5) ---------- */
+      .feature-card {
+        position: relative;
+        width: 1500px;
+        height: 760px;
+        background: #ffffff;
+        border-radius: 40px;
+        box-shadow: 0 40px 90px rgba(27, 42, 58, 0.12);
+        padding: 64px 80px;
+        display: flex;
+        flex-direction: column;
+      }
+      .feature-kicker {
+        font-size: 30px;
+        font-weight: 700;
+        color: #7a4a2c;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .feature-caption {
+        margin-top: auto;
+        font-size: 42px;
+        font-weight: 600;
+        color: #1b2a3a;
+      }
+
+      /* ---------- Scene 3: diet ---------- */
+      .search-bar {
+        margin-top: 36px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 22px 32px;
+        background: #f3f0ea;
+        border-radius: 20px;
+        font-size: 36px;
+        color: #6b7280;
+        width: 900px;
+      }
+      .search-bar .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 4px solid #6b7280;
+        display: inline-block;
+      }
+      .food-rows {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .food-row {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        font-size: 38px;
+        opacity: 0;
+      }
+      .food-row .leaf {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: #d7ecd2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        flex-shrink: 0;
+      }
+      .food-row .name {
+        flex: 1;
+        color: #1b2a3a;
+        font-weight: 600;
+      }
+      .food-row .cal {
+        color: #8a9099;
+        font-weight: 500;
+      }
+      .barcode-flag {
+        position: absolute;
+        top: 64px;
+        right: 80px;
+        width: 96px;
+        height: 96px;
+        border-radius: 24px;
+        background: #1b2a3a;
+        color: #f6e3cd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 44px;
+        opacity: 0;
+      }
+
+      /* ---------- Scene 4: workout ---------- */
+      .workout-row {
+        margin-top: 48px;
+        display: flex;
+        align-items: center;
+        gap: 90px;
+      }
+      .exercise-name {
+        font-size: 52px;
+        font-weight: 700;
+        color: #1b2a3a;
+      }
+      .set-stack {
+        position: relative;
+        width: 340px;
+        height: 130px;
+        margin-top: 40px;
+      }
+      .set-stack .set-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 96px;
+        font-weight: 800;
+        color: #7a4a2c;
+        opacity: 0;
+      }
+      .rest-ring-wrap {
+        position: relative;
+        width: 260px;
+        height: 260px;
+        flex-shrink: 0;
+      }
+      .rest-ring-wrap .ring-label {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        font-weight: 700;
+        color: #3d5063;
+      }
+
+      /* ---------- Scene 5: coach + faith ---------- */
+      .split-row {
+        margin-top: 30px;
+        display: flex;
+        gap: 64px;
+        flex: 1;
+      }
+      .split-col {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .col-label {
+        font-size: 28px;
+        font-weight: 700;
+        color: #7a4a2c;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 22px;
+      }
+      .bubble {
+        max-width: 560px;
+        padding: 20px 28px;
+        border-radius: 22px;
+        font-size: 30px;
+        line-height: 1.35;
+        opacity: 0;
+        margin-bottom: 18px;
+      }
+      .bubble.user {
+        align-self: flex-end;
+        background: #eef1f4;
+        color: #1b2a3a;
+      }
+      .bubble.coach {
+        align-self: flex-start;
+        background: #1b2a3a;
+        color: #f6e3cd;
+      }
+      .bubble .char {
+        opacity: 0;
+      }
+      .chat-col-inner {
+        display: flex;
+        flex-direction: column;
+      }
+      .prayer-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 32px;
+        font-weight: 600;
+        color: #7c8794;
+        padding: 10px 0;
+      }
+      .prayer-row .check {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 3px solid #b9c0c7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #7c8794;
+        flex-shrink: 0;
+      }
+      .streak-box {
+        margin-top: 20px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+      }
+      .streak-box .num {
+        font-size: 76px;
+        font-weight: 800;
+        color: #1b2a3a;
+      }
+      .streak-box .unit {
+        font-size: 30px;
+        font-weight: 600;
+        color: #6b7280;
+      }
+      .split-caption {
+        margin-top: 18px;
+        font-size: 28px;
+        font-weight: 600;
+        color: #3d5063;
+      }
+
+      /* ---------- Scene 6: outro ---------- */
+      #scene-outro .outro-copy {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+      #scene-outro .lockup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+      }
+      #scene-outro img {
+        width: 150px;
+        height: 150px;
+        border-radius: 32px;
+        box-shadow: 0 24px 48px rgba(27, 42, 58, 0.18);
+      }
+      #scene-outro .wordmark {
+        font-size: 92px;
+        font-weight: 800;
+        color: #1b2a3a;
+      }
+      #scene-outro .line {
+        margin-top: 30px;
+        font-size: 44px;
+        font-weight: 600;
+        color: #3d5063;
+        opacity: 0;
+      }
+      #scene-outro .final-line {
+        margin-top: 22px;
+        font-size: 36px;
+        font-weight: 700;
+        color: #7a4a2c;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1920" data-height="1080">
+      <!-- ================= SCENE 1: HOOK (0-3s) ================= -->
+      <section id="scene-hook" class="scene clip dawn-bg" data-start="0" data-duration="3" data-track-index="0">
+        <div class="sunburst" id="sunburst-1" data-layout-allow-overflow="true">
+          <div class="ray" style="transform: rotate(-60deg)"></div>
+          <div class="ray" style="transform: rotate(-45deg)"></div>
+          <div class="ray" style="transform: rotate(-30deg)"></div>
+          <div class="ray" style="transform: rotate(-15deg)"></div>
+          <div class="ray" style="transform: rotate(0deg)"></div>
+          <div class="ray" style="transform: rotate(15deg)"></div>
+          <div class="ray" style="transform: rotate(30deg)"></div>
+          <div class="ray" style="transform: rotate(45deg)"></div>
+          <div class="ray" style="transform: rotate(60deg)"></div>
+          <div class="glow"></div>
+        </div>
+        <div class="hook-copy">
+          <h1 id="hook-title">OnTrack.</h1>
+          <div class="tagline" id="hook-tagline">Fitness. Faith. Fully offline.</div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 2: IDENTITY (3-5.5s) ================= -->
+      <section id="scene-identity" class="scene clip dawn-bg" data-start="3" data-duration="2.5" data-track-index="0">
+        <div class="identity-row">
+          <img id="icon-s2" src="assets/images/app-icon.png" alt="OnTrack app icon" />
+          <div>
+            <div class="wordmark" id="wordmark-s2">OnTrack</div>
+            <div class="chip" id="chip-s2">Fitness + Faith</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 3: DIET (5.5-9.5s) ================= -->
+      <section id="scene-diet" class="scene clip card-bg" data-start="5.5" data-duration="4" data-track-index="0">
+        <div class="feature-card" id="card-diet">
+          <div class="feature-kicker">Diet</div>
+          <div class="search-bar"><span class="dot"></span> chicken breast</div>
+          <div class="food-rows">
+            <div class="food-row" id="food-row-1">
+              <span class="leaf">🥗</span><span class="name">Chicken Breast, Grilled</span><span class="cal">165 cal</span>
+            </div>
+            <div class="food-row" id="food-row-2">
+              <span class="leaf">🥗</span><span class="name">Greek Yogurt, Plain</span><span class="cal">100 cal</span>
+            </div>
+            <div class="food-row" id="food-row-3">
+              <span class="leaf">🥗</span><span class="name">Banana, Medium</span><span class="cal">105 cal</span>
+            </div>
+          </div>
+          <div class="barcode-flag" id="barcode-flag">▮▯▮</div>
+          <div class="feature-caption" id="diet-caption">12,000+ foods. Fully offline.</div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 4: WORKOUT (9.5-13s) ================= -->
+      <section id="scene-workout" class="scene clip card-bg" data-start="9.5" data-duration="3.5" data-track-index="0">
+        <div class="feature-card" id="card-workout">
+          <div class="feature-kicker">Workout</div>
+          <div class="workout-row">
+            <div>
+              <div class="exercise-name" id="exercise-name">Barbell Bench Press</div>
+              <div class="set-stack" id="set-stack">
+                <div class="set-line" id="set-1">1 &times; 10</div>
+                <div class="set-line" id="set-2">2 &times; 10</div>
+                <div class="set-line" id="set-3">3 &times; 10</div>
+              </div>
+            </div>
+            <div class="rest-ring-wrap">
+              <svg width="260" height="260" viewBox="0 0 260 260">
+                <circle cx="130" cy="130" r="108" fill="none" stroke="#eee6d8" stroke-width="16" />
+                <circle
+                  id="rest-ring"
+                  cx="130"
+                  cy="130"
+                  r="108"
+                  fill="none"
+                  stroke="#c98a5a"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  transform="rotate(-90 130 130)"
+                  stroke-dasharray="678.6"
+                  stroke-dashoffset="0"
+                />
+              </svg>
+              <div class="ring-label">Rest</div>
+            </div>
+          </div>
+          <div class="feature-caption" id="workout-caption">616 exercises. Log it, don't guess it.</div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 5: COACH + FAITH (13-17s) ================= -->
+      <section id="scene-coach-faith" class="scene clip card-bg" data-start="13" data-duration="4" data-track-index="0">
+        <div class="feature-card" id="card-coach">
+          <div class="feature-kicker">Coach &amp; Faith</div>
+          <div class="split-row">
+            <div class="split-col">
+              <div class="col-label">Coach</div>
+              <div class="chat-col-inner">
+                <div class="bubble user" id="bubble-user">
+                  <span id="chat-user-text">How&rsquo;d this week go?</span>
+                </div>
+                <div class="bubble coach" id="bubble-coach">
+                  <span id="chat-coach-text">3 workouts logged. Weight&rsquo;s trending down.</span>
+                </div>
+              </div>
+              <div class="split-caption">Knows your real logs.</div>
+            </div>
+            <div class="split-col">
+              <div class="col-label">Faith</div>
+              <div id="prayer-list">
+                <div class="prayer-row" id="prayer-1"><span class="check">✓</span>Fajr</div>
+                <div class="prayer-row" id="prayer-2"><span class="check">✓</span>Dhuhr</div>
+                <div class="prayer-row" id="prayer-3"><span class="check">✓</span>Asr</div>
+                <div class="prayer-row" id="prayer-4"><span class="check">✓</span>Maghrib</div>
+                <div class="prayer-row" id="prayer-5"><span class="check">✓</span>Isha</div>
+              </div>
+              <div class="streak-box">
+                <span class="num" id="streak-num">0</span><span class="unit">day streak</span>
+              </div>
+              <div class="split-caption">Knows your streak too.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 6: OUTRO (17-20s) ================= -->
+      <section id="scene-outro" class="scene clip dawn-bg" data-start="17" data-duration="3" data-track-index="0">
+        <div class="sunburst" id="sunburst-6" data-layout-allow-overflow="true">
+          <div class="ray" style="transform: rotate(-60deg)"></div>
+          <div class="ray" style="transform: rotate(-45deg)"></div>
+          <div class="ray" style="transform: rotate(-30deg)"></div>
+          <div class="ray" style="transform: rotate(-15deg)"></div>
+          <div class="ray" style="transform: rotate(0deg)"></div>
+          <div class="ray" style="transform: rotate(15deg)"></div>
+          <div class="ray" style="transform: rotate(30deg)"></div>
+          <div class="ray" style="transform: rotate(45deg)"></div>
+          <div class="ray" style="transform: rotate(60deg)"></div>
+          <div class="glow"></div>
+        </div>
+        <div class="outro-copy">
+          <div class="lockup">
+            <img id="icon-s6" src="assets/images/app-icon.png" alt="OnTrack app icon" />
+            <div class="wordmark" id="wordmark-s6">OnTrack</div>
+          </div>
+          <div class="line" id="outro-line-1">No accounts. No cloud.</div>
+          <div class="line" id="outro-line-2">Just on track.</div>
+          <div class="final-line" id="outro-final">OnTrack — on the App Store.</div>
+        </div>
+      </section>
+
+      <audio id="bgm" src="assets/music/business-moves-vol-1.mp3" data-start="0" data-duration="20" data-track-index="30"></audio>
+    </div>
+
+    <script>
+      // Wrap each character of an element's text in its own span for a seek-safe
+      // per-character reveal (stagger targets these spans instead of a CSS
+      // clip/typewriter trick, which is not seekable).
+      function splitChars(el) {
+        const text = el.textContent;
+        el.textContent = "";
+        const spans = [];
+        for (const ch of text) {
+          const span = document.createElement("span");
+          span.className = "char";
+          span.textContent = ch;
+          el.appendChild(span);
+          spans.push(span);
+        }
+        return spans;
+      }
+
+      const userChars = splitChars(document.getElementById("chat-user-text"));
+      const coachChars = splitChars(document.getElementById("chat-coach-text"));
+
+      const tl = gsap.timeline({ paused: true });
+
+      // ---------------- Scene 1: hook (0-3s) ----------------
+      tl.fromTo("#sunburst-1", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "power1.out" }, 0);
+      tl.fromTo("#hook-title", { y: 46, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, 0.15);
+      tl.fromTo("#hook-tagline", { y: 26, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 0.95);
+
+      // ---------------- Scene 2: identity (3-5.5s) ----------------
+      tl.fromTo(
+        "#icon-s2",
+        { scale: 0.85, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.4)", transformOrigin: "center center" },
+        3.1
+      );
+      tl.fromTo("#wordmark-s2", { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 3.35);
+      tl.fromTo("#chip-s2", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 3.55);
+
+      // ---------------- Scene 3: diet (5.5-9.5s) ----------------
+      tl.fromTo("#card-diet", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 5.6);
+      tl.fromTo("#diet-caption", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, 5.85);
+      // beat-grid: row 1 6.03s, row 2 7.02s, row 3 8.02s (every-other-beat spacing so each row holds long enough to read)
+      tl.fromTo("#food-row-1", { x: -26, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 6.03);
+      tl.fromTo("#food-row-2", { x: -26, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 7.02);
+      tl.fromTo("#food-row-3", { x: -26, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 8.02);
+      tl.fromTo(
+        "#barcode-flag",
+        { scale: 0.6, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.6)", transformOrigin: "center center" },
+        8.6
+      );
+
+      // ---------------- Scene 4: workout (9.5-13s) ----------------
+      tl.fromTo("#card-workout", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 9.6);
+      tl.fromTo("#exercise-name", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 9.7);
+      tl.fromTo("#workout-caption", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 9.8);
+      // set counter: 1x10 -> 2x10 -> 3x10, each a crossfade+pop (no textContent mutation, fully seek-safe)
+      tl.fromTo("#set-1", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.5)" }, 9.7);
+      tl.to("#set-1", { opacity: 0, y: -12, duration: 0.2, ease: "power1.in" }, 10.5);
+      tl.fromTo("#set-2", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.5)" }, 10.5);
+      tl.to("#set-2", { opacity: 0, y: -12, duration: 0.2, ease: "power1.in" }, 11.3);
+      tl.fromTo("#set-3", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.5)" }, 11.3);
+      // rest-timer ring drains over the whole scene window
+      tl.fromTo("#rest-ring", { strokeDashoffset: 0 }, { strokeDashoffset: 678.6, duration: 3.5, ease: "none" }, 9.5);
+
+      // ---------------- Scene 5: coach + faith (13-17s) ----------------
+      tl.fromTo("#card-coach", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 13.05);
+      tl.fromTo("#bubble-user", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 13.2);
+      tl.to(userChars, { opacity: 1, duration: 0.02, stagger: 0.025, ease: "none" }, 13.25);
+      tl.fromTo("#bubble-coach", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 14.0);
+      tl.to(coachChars, { opacity: 1, duration: 0.02, stagger: 0.025, ease: "none" }, 14.05);
+      tl.fromTo(".split-caption", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 13.5);
+      // beat-grid: prayer ticks every beat 14.02 / 14.52 / 15.02 / 15.52 / 16.02s
+      const prayerCues = [14.02, 14.52, 15.02, 15.52, 16.02];
+      for (let i = 0; i < 5; i++) {
+        const row = "#prayer-" + (i + 1);
+        tl.to(row, { color: "#2f9e5c", duration: 0.2, ease: "power1.out" }, prayerCues[i]);
+        tl.to(
+          row + " .check",
+          { borderColor: "#2f9e5c", color: "#2f9e5c", scale: 1.15, duration: 0.2, ease: "back.out(1.8)", transformOrigin: "center center" },
+          prayerCues[i]
+        );
+        tl.to(row + " .check", { scale: 1, duration: 0.15, ease: "power1.out" }, prayerCues[i] + 0.2);
+      }
+      // streak counter 0 -> 14
+      const streakEl = document.getElementById("streak-num");
+      const streakProxy = { val: 0 };
+      tl.to(
+        streakProxy,
+        {
+          val: 14,
+          duration: 2.6,
+          ease: "power1.out",
+          onUpdate: function () {
+            streakEl.textContent = Math.round(streakProxy.val);
+          },
+        },
+        13.4
+      );
+
+      // ---------------- Scene 6: outro (17-20s) ----------------
+      tl.fromTo("#sunburst-6", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 17.0);
+      // beat-locked: 17.02s (strong cue)
+      tl.fromTo(
+        "#icon-s6",
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.5)", transformOrigin: "center center" },
+        17.02
+      );
+      tl.fromTo("#wordmark-s6", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 17.15);
+      tl.fromTo("#outro-line-1", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 17.5);
+      tl.fromTo("#outro-line-2", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 17.95);
+      tl.fromTo("#outro-final", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 18.4);
+
+      // ---------------- Music automation ----------------
+      tl.fromTo("#bgm", { volume: 0 }, { volume: 0.55, duration: 0.6, ease: "power1.out" }, 0);
+      tl.to("#bgm", { volume: 0.35, duration: 0.4, ease: "power1.inOut" }, 13.0);
+      tl.to("#bgm", { volume: 0.55, duration: 0.4, ease: "power1.inOut" }, 16.6);
+      tl.to("#bgm", { volume: 0, duration: 1.0, ease: "power1.in" }, 19.0);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
