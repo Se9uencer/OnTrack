@@ -1,11 +1,11 @@
-name: iOS tests
+name: CI
 
 on:
   push:
   pull_request:
 
 jobs:
-  test:
+  ios-tests:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
@@ -42,3 +42,21 @@ jobs:
             -only-testing:OnTrackTests \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO
+
+  worker-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: proxy
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Run Worker tests
+        run: npm test
