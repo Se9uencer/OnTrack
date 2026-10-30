@@ -6,15 +6,32 @@ import SwiftData
 /// had grams/portionLabel — with the CURRENT schema, and confirms SwiftData's automatic
 /// lightweight migration doesn't lose data or change historical totals. Live users are on
 /// the App Store, so this is the gate for the schema change in FOOD_DB_PLAN.md Phase 3.
+///
+/// The fixture (`Fixtures/LightweightMigrationV1.store`) is a real store written under the
+/// exact pre-1.2.0 FoodItem/DiaryEntry declarations (git commit 60d7f15^), bundled as a test
+/// resource rather than regenerated at runtime — SwiftData can't declare two `DiaryEntry`
+/// types in one module, so the old schema can't be recreated in-process.
 final class LightweightMigrationTests: XCTestCase {
     @MainActor
     func testPreExistingStoreOpensWithUnchangedTotals() throws {
-        let path = "/private/tmp/claude-501/-Users-ibrahimansari-Fitness-App/d44bbdf3-d2b9-4052-91b9-8a8dafad43d0/scratchpad/migration_fixture.store"
-        XCTAssertTrue(FileManager.default.fileExists(atPath: path),
-                      "fixture missing — regenerate via the pre-Phase-3 seed step before running this test")
+        let bundledURL = try XCTUnwrap(
+            Bundle(for: Self.self).url(forResource: "LightweightMigrationV1", withExtension: "store"),
+            "fixture not bundled with OnTrackTests — check it's listed under the OnTrackTests target's Resources build phase")
+
+        // Copy to a fresh scratch location per run so SwiftData's open (which may write
+        // -wal/-shm sidecars) never touches the committed fixture.
+        let workingURL = FileManager.default.temporaryDirectory
+            .appendingPathComponent(UUID().uuidString, isDirectory: true)
+            .appendingPathComponent("LightweightMigrationV1.store")
+        try FileManager.default.createDirectory(at: workingURL.deletingLastPathComponent(),
+                                                 withIntermediateDirectories: true)
+        try FileManager.default.copyItem(at: bundledURL, to: workingURL)
+        addTeardownBlock {
+            try? FileManager.default.removeItem(at: workingURL.deletingLastPathComponent())
+        }
 
         let schema = Schema([FoodItem.self, DiaryEntry.self])
-        let config = ModelConfiguration(schema: schema, url: URL(fileURLWithPath: path))
+        let config = ModelConfiguration(schema: schema, url: workingURL)
         let container = try ModelContainer(for: schema, configurations: config) // must not throw
 
         let entries = try container.mainContext.fetch(FetchDescriptor<DiaryEntry>())

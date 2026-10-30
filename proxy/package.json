@@ -1,0 +1,13 @@
+{
+  "name": "fittrack-ai-proxy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.8.71",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.42.0"
+  }
+}

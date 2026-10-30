@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ios-tests:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      # No test in OnTrackTests calls the network, so placeholder values are enough —
+      # this file just needs to exist for the Info.plist $(VAR) substitutions to resolve.
+      - name: Write placeholder secrets
+        run: |
+          mkdir -p Config
+          cat > Config/Secrets.xcconfig <<'EOF'
+          USDA_API_KEY =
+          APP_TOKEN =
+          EOF
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Pick an available iOS Simulator
+        id: sim
+        run: |
+          UDID=$(xcrun simctl list devices available | grep -m1 "iPhone" | grep -oE '[0-9A-F-]{36}')
+          echo "Picked simulator: $UDID"
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+
+      - name: Run OnTrackTests
+        run: |
+          xcodebuild test \
+            -project OnTrack.xcodeproj \
+            -scheme OnTrack \
+            -destination "id=${{ steps.sim.outputs.udid }}" \
+            -only-testing:OnTrackTests \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
+
+  worker-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: proxy
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Run Worker tests
+        run: npm test
