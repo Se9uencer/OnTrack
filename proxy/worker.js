@@ -11,9 +11,38 @@
 
 const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
 // Tried in order — lite is the default (noticeably faster + more spare capacity);
-// if it's overloaded (503) we fall through to full flash. Both are multimodal
+// if it's overloaded we fall through to full flash. Both are multimodal
 // (coach chat + meal photos); "latest" aliases avoid version churn.
 const MODELS = ["gemini-flash-lite-latest", "gemini-flash-latest"];
+
+const ATTEMPTS_PER_MODEL = 2;
+const UPSTREAM_TIMEOUT_MS = 20_000; // per attempt — Gemini hanging shouldn't hang the app
+const BACKOFF_BASE_MS = 300;
+const BACKOFF_MAX_MS = 4_000;
+
+// 429 (rate limited) and any 5xx (overloaded/unavailable/internal error) are Gemini-side
+// and transient — worth a retry or a fallback model. 4xx other than 429 means our request
+// was bad, so retrying it (even against a different model) would just fail the same way.
+export function isRetryableStatus(status) {
+  return status === 429 || (status >= 500 && status <= 599);
+}
+
+// Exponential backoff with full jitter (0..cap), capped so a long fallback chain can't
+// stall the request for seconds. attempt is 0-indexed.
+export function computeBackoffMs(attempt) {
+  const cap = Math.min(BACKOFF_BASE_MS * 2 ** attempt, BACKOFF_MAX_MS);
+  return Math.random() * cap;
+}
+
+export async function fetchWithTimeout(url, options, timeoutMs) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 export default {
   async fetch(request, env) {
@@ -49,27 +78,39 @@ export default {
     // 400 INVALID_ARGUMENT — "minimal" is the lowest value it still accepts.
     if (body.reasoning_effort === undefined) body.reasoning_effort = "minimal";
 
-    // Gemini returns 503 UNAVAILABLE on demand spikes. For each model, retry once
-    // with backoff; if it's still overloaded, fall through to the next model. The
-    // 503 body is small JSON (not the SSE stream), so retrying is safe for both
-    // streaming and non-streaming requests. Any non-503 (success or a real error)
-    // is returned immediately.
-    let upstream;
+    // Gemini returns 429/5xx on rate limits, demand spikes, and internal errors. For each
+    // model, retry with exponential backoff + jitter; if it's still failing, fall through to
+    // the next model. A retryable response's body is small JSON (not the SSE stream), so
+    // retrying is safe for both streaming and non-streaming requests. Any non-retryable
+    // response (success or a real 4xx error) is returned immediately. A request that times
+    // out or can't reach Gemini at all (network error) is treated the same as a retryable
+    // status — worth falling back, not a reason to break early.
+    let upstream = null;
     outer: for (const model of MODELS) {
       body.model = model; // pin server-side so provider/model swaps need no app update
       const payload = JSON.stringify(body);
-      for (let attempt = 0; attempt < 2; attempt++) {
-        upstream = await fetch(GEMINI_URL, {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${env.GEMINI_KEY}`,
-            "Content-Type": "application/json",
-          },
-          body: payload,
-        });
-        if (upstream.status !== 503) break outer;
-        if (attempt === 0) await new Promise((r) => setTimeout(r, 500));
+      for (let attempt = 0; attempt < ATTEMPTS_PER_MODEL; attempt++) {
+        try {
+          upstream = await fetchWithTimeout(GEMINI_URL, {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${env.GEMINI_KEY}`,
+              "Content-Type": "application/json",
+            },
+            body: payload,
+          }, UPSTREAM_TIMEOUT_MS);
+          if (!isRetryableStatus(upstream.status)) break outer;
+        } catch {
+          upstream = null; // timed out or network error — fall through to retry/fallback
+        }
+        if (attempt < ATTEMPTS_PER_MODEL - 1) {
+          await new Promise((r) => setTimeout(r, computeBackoffMs(attempt)));
+        }
       }
+    }
+
+    if (!upstream) {
+      return new Response("AI gateway timed out reaching the model provider.", { status: 504 });
     }
 
     // Pass the response (including the SSE stream) straight back.
